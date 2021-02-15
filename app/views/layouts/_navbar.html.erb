@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light sticky-top bg-light">
+<%= link_to  root_path  ,class:"navbar-brand" do %>
+  <%= image_tag "meed2.jpg", class: "d-inline-block align-top" %>
+<% end %>
+
+
+  <ul class="navbar max-width none bg-dark">
+  
+    <li>
+      <a><i class="fas fa-home"></i></a>
+      <%= link_to "Home",  root_path  ,class:"navbar-brand"%>
+    </li>
+    <li><a class="navbar-brand text-green" href="#about"> <i class="fas fa-user"></i> About</a></li>
+    <li><a class="navbar-brand" href="#services"> <i class="fas fa-bars"></i> Services</a></li>
+    <li><a class="navbar-brand" href="#contact"> <i class="fas fa-phone"></i> Contact</a></li>
+  </ul>
+  
+</nav>
+
+
+<nav class="navbar nav1 navbar-dark bg-light">
+  <div class="navbar center width">
+    <%= link_to  root_path ,class:"navbar-brand" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <a class="navbar-brand" href="#about"><i class="fas fa-user"></i> About</a>
+    <a class="navbar-brand" href="#services"><i class="fas fa-bars"></i> Services</a>
+    <a class="navbar-brand" href="#contact"><i class="fas fa-phone"></i> Contact</a>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <form class="form-inline d-flex w-100">
+    <input class="form-control m-2 p-2" type="search" placeholder="Search medications..." aria-label="Search">
+  </form>
+  <div class = "d-flex">
+
+  </div>
+
+</nav>

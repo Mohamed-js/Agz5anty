@@ -1,0 +1,72 @@
+<%= form_with(model: medication) do |form| %>
+  <% if medication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medication.errors.count, "error") %> prohibited this medication from being saved:</h2>
+
+      <ul>
+        <% medication.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field form-gruop">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+<br>
+  <div class="field form-gruop">
+    <%= form.label "Category" %>
+    <%= select_tag "medication[#{:category_id}]", options_from_collection_for_select(@categories, "id", "name"), class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :ingredients %>
+    <%= form.text_field :ingredients, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :shape %>
+    <%= select_tag "medication[#{:shape}]", options_for_select(["tablet","syrup","capsule","powder"]), class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :dose %>
+    <%= form.text_field :dose, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <% if medication.image.attached? %>
+      <%= image_tag medication.image, style: "width:200px;" %>
+    <% end %>
+    <%= form.file_field :image, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :availability %>
+        <%= select_tag "medication[#{:availability}]", options_for_select([true,false]), class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.submit class:"btn btn-block btn-success" %>
+  </div>
+<% end %>
+<br><br>

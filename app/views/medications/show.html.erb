@@ -1,0 +1,62 @@
+<div class="container">
+  <p id="notice" class="alert-success"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @medication.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @medication.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @medication.price %>
+  </p>
+
+  <p>
+    <strong>Main:</strong>
+    <%= @medication.main %>
+  </p>
+
+  <p>
+    <strong>Sub:</strong>
+    <%= @medication.sub %>
+  </p>
+
+  <p>
+    <strong>Ingredients:</strong>
+    <%= @medication.ingredients %>
+  </p>
+
+  <p>
+    <strong>Shape:</strong>
+    <%= @medication.shape %>
+  </p>
+
+  <p>
+    <strong>Dose:</strong>
+    <%= @medication.dose %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @medication.quantity %>
+  </p>
+
+  <p>
+    <strong>Img:</strong>
+    <%= @medication.img %>
+  </p>
+
+  <p>
+    <strong>Availability:</strong>
+    <%= @medication.availability %>
+  </p>
+
+  <%= link_to 'Edit', edit_medication_path(@medication) %> |
+  <%= link_to 'Back', medications_path %>
+
+</div>

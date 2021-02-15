@@ -1,0 +1,903 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: 'Changa', sans-serif;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul.none {
+    display: none;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-left: 50px;
+}
+
+body > nav.navbar.navbar-light.sticky-top.bg-light > ul > li > a {
+    color: rgb(214, 214, 214) ;
+    /* margin: 0; */
+}
+
+.choice {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.checks {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.max-width {
+    max-width: 1000px;
+}
+
+.width {
+    width: 1000px;
+}
+
+.max-width2 {
+    max-width: 500px;
+}
+
+.max-width3 {
+    max-width: 700px;
+}
+
+.center {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-col {
+    display: flex;
+    flex-flow: column;
+}
+
+.big-header {
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.justify{
+    justify-content: space-between;
+}
+
+.nav1 a {
+    font-size: 14px;
+    color: rgb(202, 202, 202) !important;
+}
+
+.sticky-top {
+    align-items: flex-end;
+}
+
+.navbar {
+    background-color: #171719 !important;
+    justify-content: flex-start;
+}
+
+.navbar a {
+    padding: 0;
+    margin: auto;
+}
+
+.navbar a img {
+    height: 80px;
+    width: auto;
+}
+
+.fa-shopping-cart {
+    color:#28a745;
+}
+
+.cover {
+    position: relative;
+    height: 340px;
+    text-align: center;
+    background: url(medical3.jpg) no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-text {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.cover-text h1 {
+    font-weight: bold;
+    color: #038006;
+    font-size: 2.5em;
+}
+
+h3.slogan {
+    font-size: 1.2em;
+}
+
+.our-services-h {
+    color: #111224;
+    font-size: 2em;
+}
+
+.services {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    justify-content: center;
+}
+
+.service {
+    height: 145px;
+    width: 145px;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+
+.service h3 {
+    background-color: rgba(255, 255, 255, .7);
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    /* border-radius: 5px; */
+    font-weight: bolder;
+    z-index: 10;
+    font-size: 1.2em;
+}
+
+.service a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.categories {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat( auto-fit, minmax(120px, 1fr) );
+    justify-items: center;
+}
+
+.background {
+    height: 100%; 
+    width: 100%;
+}
+
+h3.cat-name {
+    background-color: rgba(17, 18, 26, 1);
+    border-radius: 0;
+    color: white;
+    font-size: 1em;
+}
+
+.catty {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+}
+
+.cat-name {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    font-weight: 600;
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.service1 {
+    background: url(consultation.jpg) no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.service2 {
+    background: url(medications.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+
+.service3 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    /* border-bottom-left-radius: 10px; */
+    /* border-top-left-radius: 5pc; */
+    margin-top: 20px;
+    background: url(beauty.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.service4 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    margin-top: 20px;
+    background: url(cosmo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.service6 {
+    background: url(she.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.service7 {
+    background: url(he.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.service8 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-top: 20px;
+    background: url(baby.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.service5 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    
+    margin-top: 20px;
+    background: url(wellness2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.steps-container {
+    /* background-color: #111224; */
+    background-color: #171719;
+    padding: 30px 0px;
+}
+
+.steps-container h2 {
+    padding-top: 50px;
+    color: rgb(241, 67, 67);
+}
+
+.steps {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 4px;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+}
+  
+.bg-image {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+}
+
+.step {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    padding: 10px 10px;
+    height: 220px;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    color: white;
+    z-index: 100;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.step h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.step p {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.step i {
+    padding-bottom: 10px;
+    top: -50px;
+}
+  
+.step i {
+    font-size: 40px;
+    color: rgb(241, 67, 67);
+}
+
+footer {
+    background-color: #171719;
+    color: whitesmoke;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 80px;}
+
+  
+footer div {
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(139, 139, 139, 0.2);
+  padding: 20px;
+}
+  
+footer h3 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.subscribe {
+    padding-bottom: 20px;
+}
+
+
+
+/* Diagnosis */
+
+.question h1 {
+    margin-top: 30px;
+    font-size: 1.6em !important;
+}
+
+.history-form {
+    max-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+}
+
+.history-form div {
+    width: 100%;
+    align-items: center;
+}
+
+.history-form label {
+    text-align: left;
+}
+
+.female-group {
+    display: none;
+}
+
+
+/* disease page */
+
+.follow h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 0;
+    font-size: 1.5em;
+}
+
+.dQuestion h2 {
+    font-size: 1.3em;
+}
+
+.dAnswers h5 {
+    font-size: .9em;
+    font-weight: 500;
+}
+
+.answerQuestion {
+    padding: 30px;
+}
+
+/* SUB MOb */
+@media only screen and (max-width: 300px){
+    .service {
+        height: 120px;
+        width: 120px;
+        position: relative;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .categories {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+        justify-items: center;
+    }
+    
+    .catty {
+        position: relative;
+        width: 170px;
+        height: 170px;
+        margin: 10px;
+    }
+
+    .card {
+        height: 28  0px !important;
+        width: 180px !important;
+    }
+    
+    .product-img {
+        max-height: 110px;
+        height: 150px;
+        width: 100%;
+        text-align: center
+    }
+    
+    .product-img img {
+        max-height: 120px;
+        max-width: 120px;
+    }
+    
+    
+}
+
+/* MOb Tab */
+@media only screen and (min-width: 360px){
+    .service {
+        height: 160px;
+        width: 160px;
+        position: relative;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    
+    .categories {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat( auto-fit, minmax(170px, 1fr) );
+        justify-items: center;
+    }
+    
+    .catty {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+    }
+
+    .card {
+        height: 225px !important;
+        width: 140px !important;
+    }
+    
+    .product-img {
+        max-height: 110px;
+        height: 110px;
+        width: 100%;
+        text-align: center
+    }
+    
+    .product-img img {
+        max-height: 90px;
+        max-width: 100%;
+    }
+
+    .product-info h6 {
+        margin: 3px;
+    }
+
+    .product-info span, .product-info a {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        height: 30px !important;
+        font-size: small;
+    } 
+
+    .product-info a {
+        font-size: 16px;
+    }
+    
+
+    
+}
+/* Tablet */
+
+@media only screen and (min-width: 767px){
+    body {
+        font-size: 18px;
+    }
+
+    .cover {
+        height: 400px;
+    }
+
+    .service {
+        height: 200px;
+        width: 220px;
+        position: relative;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .categories {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat( auto-fit, minmax(190px, 1fr) );
+        justify-items: center;
+    }
+    
+    .catty {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin: 10px;
+    }
+
+    .cat-name {
+        padding: 15px;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+
+    
+    .steps {
+        grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
+    }
+
+    footer div {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+}
+
+
+/* DESKTOP */
+
+@media only screen and (min-width: 1000px){
+    body {
+        font-size: 18px;
+    }
+
+    a.navbar-brand {
+        margin: 10px;
+    }
+
+    .nav1 {
+        display: none;
+    }
+
+    ul.none {
+        display: flex;
+    }
+
+    .cover {
+        height: 550px;
+    }
+
+    .logo-name{
+        font-size: 65px;
+    }
+
+    .service {
+        height: 200px;
+        width: 220px;
+        position: relative;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .categories {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat( auto-fit, minmax(230px, 1fr) );
+        justify-items: center;
+    }
+    
+    .catty {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin: 10px;
+    }
+
+    
+    .steps {
+        grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    }
+
+    footer {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    footer div {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div ul li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+/* CATEEEEEEEEEEEEEEEEEEGORIES */
+
+.pain {
+    background: url(pain.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+.s h3 {
+    position: relative;
+    top: 40%;
+}
+
+.allergy {
+    background: url(allergy.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.cold {
+    background: url(cold.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.antibiotics {
+    background: url(antibiotics.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.digestive {
+    background: url(digestive.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.eye {
+    background: url(eye.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.vitamins {
+    background: url(vitamins.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.sexual {
+    background: url(wellness2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.women {
+    background: url(women.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.cough {
+    background: url(cough.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.babies {
+    background: url(baby.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.card {
+    height: 280px;
+    width: 124px;
+}
+
+.meds {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
+    justify-items: center;
+    grid-gap: 8px;
+}
+
+.product-img {
+    max-height: 140px;
+    height: 140px;
+    width: 100%;
+    text-align: center
+}
+
+.product-img img {
+    height: 100px;
+    max-width: 100px;
+}
+
+.sidebar {
+    width: 200px; background-color:#171719; position:fixed; top:95px; z-index:1000; color: white; left: -200px;
+}
+
+.sidebar-toggle {
+    background-color:#171719; position:relative; right:-170px; top: 110px; color: white; font-weight: bolder; border-top-right-radius: 80% 50%; border-bottom-right-radius:  80% 50%;
+}
+
+@keyframes slideIn {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -200px;
+    }
+}
+
+
+.slide-in {
+    animation: slideIn .7s ease-out forwards;
+}
+
+.slide-out {
+    animation: slideOut .7s ease-in forwards;
+}

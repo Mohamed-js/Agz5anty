@@ -1,0 +1,20 @@
+<br><br>
+<div class="container max-width3 meds">
+    <% @medications.each do |medication| %>
+   
+      <div class="card" >
+        <div class="p-1 product-img ">
+          <%= image_tag "drugs/#{medication.name}"%>
+        </div>
+        <div class="product-info p-2">
+          <h6 class="card-title"><b><%= medication.name %></b></h6>
+          <h6 class="card-text "><i><%= medication.shape %></i></h6>
+          <span class="card-text bg-warning px-1 rounded py-0"><%= medication.price %> EGP</span>
+          <a href="#" class="btn btn-success btn-block my-2">Add To Cart</a>
+        </div>
+      </div>
+
+    <% end %>
+</div>
+<br><br>
+<br><br>
