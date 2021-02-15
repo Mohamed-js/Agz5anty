@@ -11311,3 +11311,115 @@ Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 0.2ms | Allocations: 114
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-02-15 06:30:16 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering app/index.html within layouts/application
+  Rendered app/index.html within layouts/application (Duration: 14.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 15.2ms | Allocations: 1099)
+  Rendered layouts/_sidebar.html.erb (Duration: 1.5ms | Allocations: 418)
+  Rendered layouts/_bottombar.html.erb (Duration: 6.5ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 892.3ms | Allocations: 32086)
+Completed 200 OK in 1010ms (Views: 915.2ms | ActiveRecord: 0.9ms | Allocations: 42516)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-15 06:30:23 +0200
+Processing by AppController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering app/index.html within layouts/application
+  Rendered app/index.html within layouts/application (Duration: 0.1ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 819)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.0ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.5ms | Allocations: 9943)
+Completed 200 OK in 78ms (Views: 73.7ms | ActiveRecord: 0.2ms | Allocations: 11423)
+
+
+Started GET "/medications" for 127.0.0.1 at 2021-02-15 06:30:34 +0200
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:24
+  Rendered medications/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 1198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 802)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 95.0ms | Allocations: 11073)
+Completed 200 OK in 136ms (Views: 99.6ms | ActiveRecord: 0.6ms | Allocations: 14537)
+
+
+Started GET "/medications/new" for 127.0.0.1 at 2021-02-15 06:30:38 +0200
+Processing by MedicationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering medications/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/medications/_form.html.erb:23
+  Rendered medications/_form.html.erb (Duration: 236.0ms | Allocations: 9387)
+  Rendered medications/new.html.erb within layouts/application (Duration: 248.2ms | Allocations: 9749)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 804)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 184)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.0ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 318.0ms | Allocations: 19532)
+Completed 200 OK in 373ms (Views: 319.0ms | ActiveRecord: 1.6ms | Allocations: 29232)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-15 06:30:44 +0200
+Processing by AppController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering app/index.html within layouts/application
+  Rendered app/index.html within layouts/application (Duration: 0.1ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 818)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 9939)
+Completed 200 OK in 83ms (Views: 77.6ms | ActiveRecord: 0.2ms | Allocations: 11404)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-15 06:30:51 +0200
+Processing by AppController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering app/index.html within layouts/application
+  Rendered app/index.html within layouts/application (Duration: 0.1ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 810)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.0ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 71.3ms | Allocations: 9916)
+Completed 200 OK in 77ms (Views: 72.4ms | ActiveRecord: 0.2ms | Allocations: 11376)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-15 06:30:55 +0200
+Processing by AppController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering app/index.html within layouts/application
+  Rendered app/index.html within layouts/application (Duration: 0.1ms | Allocations: 42)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 813)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered layouts/_bottombar.html.erb (Duration: 0.0ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.8ms | Allocations: 9927)
+Completed 200 OK in 99ms (Views: 88.1ms | ActiveRecord: 0.4ms | Allocations: 11387)
+
+
