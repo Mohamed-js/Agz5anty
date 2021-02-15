@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
 
 <p id="notice"><%= notice %></p>
@@ -22,7 +25,7 @@
         <td><%= category.name %></td>
         <td><%= category.img %></td>
         <% if category.image.attached? %>
-          <td><%= image_tag category.image, style:"width:200px;" %></td>
+          <td><%= image_tag category.image, style:"height:60px;" %></td>
         <% end %>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>

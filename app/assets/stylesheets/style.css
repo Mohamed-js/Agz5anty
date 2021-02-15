@@ -901,3 +901,13 @@ footer h3 {
 .slide-out {
     animation: slideOut .7s ease-in forwards;
 }
+
+.category-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-name {
+   bottom: 0;
+}
