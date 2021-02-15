@@ -3,7 +3,7 @@
     <% @categories.each do |category| %>
 
       <section class="services flex-row center max-width">
-        <div class="service center flex-row rounded">
+        <div class="service center flex-row">
           <%= link_to category_path(category.id), class:"flex-col center "  do %>
             <%= image_tag category.image, class:"category-img rounded"  %>
             <h3 class="center position-absolute category-name">
