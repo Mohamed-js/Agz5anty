@@ -8,6 +8,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
+
   end
 
   # GET /carts/new
@@ -21,7 +22,7 @@ class CartsController < ApplicationController
 
   # POST /carts or /carts.json
   def create
-    @cart = Cart.new(cart_params)
+    @cart = current_user.carts.build(cart_params)
 
     respond_to do |format|
       if @cart.save
@@ -64,6 +65,12 @@ class CartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_params
-      params.require(:cart).permit(:item, :quantity, :price, :user_id)
+      id = params[:cart][:item]
+      med = Medication.find(id)
+      name = med.name
+      price = med.price
+      params[:cart][:item] = name
+      params[:cart][:price] = price
+      params.require(:cart).permit(:item, :quantity,:price)
     end
 end

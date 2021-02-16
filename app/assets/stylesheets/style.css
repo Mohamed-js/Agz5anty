@@ -860,7 +860,7 @@ footer h3 {
 }
 
 .sidebar-toggle {
-    background-color:#171719; position:relative; right:-170px; top: 110px; color: white; font-weight: bolder; border-top-right-radius: 80% 50%; border-bottom-right-radius:  80% 50%;
+    border-radius:0; background-color:#038006; position:relative; right:-176px; top: 110px; color: white; font-weight: bolder; border-top-right-radius: 80% 50%; border-bottom-right-radius:  80% 50%; border-left: #171719;
 }
 
 @keyframes slideIn {
