@@ -11,8 +11,6 @@
     </div>
   <% end %>
 
-
-
   <div class="field form-gruop">
     <%= form.label :name %>
     <%= form.text_field :name, class:"form-control" %>
@@ -20,7 +18,8 @@
 <br>
   <div class="field form-gruop">
     <%= form.label "Category" %>
-    <%= select_tag "medication[#{:category_id}]", options_from_collection_for_select(@categories, "id", "name"), class:"form-control" %>
+    
+    <%= select_tag "medication[#{:category_id}]", options_from_collection_for_select(@categories, "id", "name", medication.category.id), class:"form-control" %>
   </div>
 <br>
   <div class="field">
@@ -40,7 +39,7 @@
 <br>
   <div class="field">
     <%= form.label :shape %>
-    <%= select_tag "medication[#{:shape}]", options_for_select(["tablet","syrup","capsule","powder"]), class:"form-control" %>
+    <%= select_tag "medication[#{:shape}]", options_for_select(["tablet","syrup","capsule","powder"], medication.shape), class:"form-control" %>
   </div>
 <br>
   <div class="field">
@@ -62,7 +61,7 @@
 <br>
   <div class="field">
     <%= form.label :availability %>
-        <%= select_tag "medication[#{:availability}]", options_for_select([true,false]), class:"form-control" %>
+        <%= select_tag "medication[#{:availability}]", options_for_select(["true","false"], medication.availability), class:"form-control" %>
   </div>
 <br>
   <div class="field">

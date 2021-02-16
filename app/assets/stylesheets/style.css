@@ -5,14 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    font-weight: 600;
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-family: 'Changa', sans-serif;
-}
-
-h3 {
-    font-size: 1.2em;
 }
 
 a {
@@ -29,6 +23,10 @@ ul.none {
     margin-bottom: 10px;
     padding: 0;
     padding-left: 50px;
+}
+
+ul.none li {
+    padding-right: 8px;
 }
 
 body > nav.navbar.navbar-light.sticky-top.bg-light > ul > li > a {
@@ -94,7 +92,6 @@ label {
 }
 
 .nav1 a {
-    font-size: 14px;
     color: rgb(202, 202, 202) !important;
 }
 
@@ -159,7 +156,6 @@ h3.slogan {
 
 .our-services-h {
     color: #111224;
-    font-size: 2em;
 }
 
 .services {
@@ -187,7 +183,6 @@ h3.slogan {
     /* border-radius: 5px; */
     font-weight: bolder;
     z-index: 10;
-    font-size: 1.2em;
 }
 
 .service a {
@@ -214,7 +209,6 @@ h3.cat-name {
     background-color: rgba(17, 18, 26, 1);
     border-radius: 0;
     color: white;
-    font-size: 1em;
 }
 
 .catty {
@@ -386,16 +380,6 @@ h3.cat-name {
     background-color: rgba(255, 255, 255, .2);
 }
 
-.step h3 {
-    font-size: 1.3em;
-    font-weight: 600;
-}
-
-.step p {
-    font-size: 1em;
-    font-weight: 500;
-}
-
 .step i {
     padding-bottom: 10px;
     top: -50px;
@@ -438,7 +422,6 @@ footer h3 {
 
 .question h1 {
     margin-top: 30px;
-    font-size: 1.6em !important;
 }
 
 .history-form {
@@ -473,17 +456,8 @@ footer h3 {
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 0;
-    font-size: 1.5em;
 }
 
-.dQuestion h2 {
-    font-size: 1.3em;
-}
-
-.dAnswers h5 {
-    font-size: .9em;
-    font-weight: 500;
-}
 
 .answerQuestion {
     padding: 30px;
@@ -528,8 +502,9 @@ footer h3 {
     }
     
     .product-img img {
-        max-height: 120px;
-        max-width: 120px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
     
     
@@ -575,8 +550,9 @@ footer h3 {
     }
     
     .product-img img {
-        max-height: 90px;
-        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .product-info h6 {
@@ -587,12 +563,7 @@ footer h3 {
         padding-top: 2px;
         padding-bottom: 2px;
         height: 30px !important;
-        font-size: small;
     } 
-
-    .product-info a {
-        font-size: 16px;
-    }
     
 
     
@@ -600,10 +571,6 @@ footer h3 {
 /* Tablet */
 
 @media only screen and (min-width: 767px){
-    body {
-        font-size: 18px;
-    }
-
     .cover {
         height: 400px;
     }
@@ -634,7 +601,6 @@ footer h3 {
 
     .cat-name {
         padding: 15px;
-        font-size: 1.2em;
         font-weight: 700;
     }
 
@@ -657,10 +623,6 @@ footer h3 {
 /* DESKTOP */
 
 @media only screen and (min-width: 1000px){
-    body {
-        font-size: 18px;
-    }
-
     a.navbar-brand {
         margin: 10px;
     }
@@ -863,8 +825,27 @@ footer h3 {
 }
 
 .product-img img {
-    height: 100px;
-    max-width: 100px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 8px;
+}
+
+.card-link:hover {
+    color: black;
+}
+
+.show-img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.show p {
+    text-align: left;
+}
+
+.show-price {
+    color: #038006;
 }
 
 .sidebar {
@@ -910,4 +891,12 @@ footer h3 {
 
 .category-name {
    bottom: 0;
+}
+
+.fa-check-circle {
+    color: #038006;
+}
+
+.fa-times-circle {
+    color: #dc3545;
 }

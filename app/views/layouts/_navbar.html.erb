@@ -4,13 +4,12 @@
 <% end %>
 
 
-  <ul class="navbar max-width none bg-dark">
+  <ul class="max-width none">
   
     <li>
-      <a><i class="fas fa-home"></i></a>
-      <%= link_to "Home",  root_path  ,class:"navbar-brand"%>
+      <%= link_to "<i class='fas fa-home'></i><span class='home-link'>Home</span>".html_safe, root_path, class:"navbar-brand" %>
     </li>
-    <li><a class="navbar-brand text-green" href="#about"> <i class="fas fa-user"></i> About</a></li>
+    <li><a class="navbar-brand" href="#about"> <i class="fas fa-user"></i> About</a></li>
     <li><a class="navbar-brand" href="#services"> <i class="fas fa-bars"></i> Services</a></li>
     <li><a class="navbar-brand" href="#contact"> <i class="fas fa-phone"></i> Contact</a></li>
   </ul>
@@ -20,12 +19,13 @@
 
 <nav class="navbar nav1 navbar-dark bg-light">
   <div class="navbar center width">
-    <%= link_to  root_path ,class:"navbar-brand" do %>
-      <i class="fas fa-home"></i>
-    <% end %>
-    <a class="navbar-brand" href="#about"><i class="fas fa-user"></i> About</a>
-    <a class="navbar-brand" href="#services"><i class="fas fa-bars"></i> Services</a>
-    <a class="navbar-brand" href="#contact"><i class="fas fa-phone"></i> Contact</a>
+    <li>
+      <a><i class="fas fa-home"></i></a>
+      <%= link_to "Home",  root_path  ,class:"navbar-item"%>
+    </li>
+    <a class="navbar-item" href="#about"><i class="fas fa-user"></i> About</a>
+    <a class="navbar-item" href="#services"><i class="fas fa-bars"></i> Services</a>
+    <a class="navbar-item" href="#contact"><i class="fas fa-phone"></i> Contact</a>
   </div>
 </nav>
 

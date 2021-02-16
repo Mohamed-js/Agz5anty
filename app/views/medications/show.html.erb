@@ -1,62 +1,49 @@
-<div class="container">
-  <p id="notice" class="alert-success"><%= notice %></p>
+<div class="max-width2 center show p-2">
+  <br><br>
+  <%= image_tag @medication.image, class:"show-img" %>
+  <hr>
+  <h6 class="flex-row">
+    <strong> <%= @medication.name %> <%= @medication.dose %> </strong> 
+  </h6>
+    <p class="show-price">EGP <%= @medication.price %></p>
+    <p>
+    <% if @medication.availability == "true" %>
+      <i class="fa fa-check-circle"></i> Available for delivery
+    <% else %>
+      <i class="fa fa-times-circle"></i> Sorry, not available now
+    <% end %>
+    </p>
+  
+  
+  <div class="row text-left">
+    <div class="col-4">
+      <strong><p>Description:</p></strong>
+    </div>
+    <div class="col-8">
+      <p><%= @medication.description %></p>
+      <br>
+    </div>
+  </div>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @medication.name %>
-  </p>
+  <div class="row text-left">
+    <div class="col-4">
+      <strong><p>Dosage form:</p></strong>
+    </div>
+    <div class="col-8">
+      <p><%= @medication.shape %></p>
+    </div>
+  </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @medication.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= @medication.price %>
-  </p>
-
-  <p>
-    <strong>Main:</strong>
-    <%= @medication.main %>
-  </p>
-
-  <p>
-    <strong>Sub:</strong>
-    <%= @medication.sub %>
-  </p>
-
-  <p>
-    <strong>Ingredients:</strong>
-    <%= @medication.ingredients %>
-  </p>
-
-  <p>
-    <strong>Shape:</strong>
-    <%= @medication.shape %>
-  </p>
-
-  <p>
-    <strong>Dose:</strong>
-    <%= @medication.dose %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= @medication.quantity %>
-  </p>
-
-  <p>
-    <strong>Img:</strong>
-    <%= @medication.img %>
-  </p>
-
-  <p>
-    <strong>Availability:</strong>
-    <%= @medication.availability %>
-  </p>
-
-  <%= link_to 'Edit', edit_medication_path(@medication) %> |
-  <%= link_to 'Back', medications_path %>
+  <div class="row text-left">
+    <div class="col-4">
+      <strong><p>Active ingredients:</p></strong>
+    </div>
+    <div class="col-8">
+      <p><%= @medication.ingredients %></p>
+    </div>
+  </div>
 
 </div>
+
+<br><br>
+<br><br>
