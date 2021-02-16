@@ -1,8 +1,8 @@
 <br><br>
-<div class="container max-width3 meds">
+<div class="container max-width3 meds grid">
     <% @categories.each do |category| %>
 
-      <section class="center catt">
+      <section class="center">
         <div class="service center flex-row">
           <%= link_to category_path(category.id), class:"flex-col center "  do %>
             <%= image_tag category.image, class:"category-img rounded"  %>

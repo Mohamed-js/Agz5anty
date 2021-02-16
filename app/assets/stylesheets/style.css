@@ -907,3 +907,7 @@ footer h3 {
 .fa-times-circle {
     color: #dc3545;
 }
+
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
