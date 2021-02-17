@@ -1,4 +1,9 @@
 <nav class="navbar fixed-bottom navbar-dark bg-light justify-content-around">
-    <a class="navbar-brand" href="index.php"><i class="fas fa-home"></i></a>
-    <a class="navbar-brand text-green" href="#"><i class="fas fa-shopping-cart btn-green"></i></a>
+<a id="sidebar-toggler" class="btn sidebar-toggle p-2 "><i class="fa fa-bars"></i></a>
+    <%
+=begin%>
+ <a class="navbar-brand" id="menu"><i class="fas fa-bars"></i></a> 
+<%
+=end%>
+    <a class="navbar-brand text-green m-0"  href="/carts"><i class="fas fa-shopping-cart btn-green position-relative"> <%if user_signed_in?%> <span class="cart-count"><%= current_user.carts.count %></span><%end%></i></a>
 </nav>

@@ -860,7 +860,7 @@ footer h3 {
 }
 
 .sidebar-toggle {
-    border-radius:0; background-color:#038006; position:relative; right:-176px; top: 110px; color: white; font-weight: bolder; border-top-right-radius: 80% 50%; border-bottom-right-radius:  80% 50%; border-left: #171719;
+   margin: 0!important; border-radius:0; color: white; font-size: 20px;
 }
 
 @keyframes slideIn {
@@ -910,4 +910,48 @@ footer h3 {
 
 .grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.mod {
+    top: 35%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    padding: 40px;
+    margin: auto;
+    height: 230px;
+    border: 1px solid rgba(128, 128, 128,.2);
+    border-radius: 10px;
+    display: none;
+}
+
+.mod .field {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-img img {
+    height: 110px;
+    width: 90px;
+    object-fit: cover;
+}
+
+.cart-controls {
+    top: 12px;
+    right: 12px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -15px;
+    right: -8px;
+    padding-top: 4px;
+    border: 1px solid rgba(160, 159, 159, .5);
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    font-size: 12px;
+    color: black;
+    background-color: rgb(255, 145, 0);
+    text-align: center;
 }

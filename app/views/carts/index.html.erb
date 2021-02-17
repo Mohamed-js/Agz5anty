@@ -1,33 +1,37 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="max-width2 center show p-2 position-relative">
+  <% unless @carts.empty? %>
+  <br>
+    <h2><strong>Cart Items</strong></h2>
     <% @carts.each do |cart| %>
-      <tr>
-        <td><%= cart.item %></td>
-        <td><%= cart.quantity %></td>
-        <td><%= cart.price %></td>
-        <td><%= cart.user_id %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% med = Medication.find(cart.item)%>
+      <div class="d-flex cart-item p-2 my-3 border rounded align-items-center position-relative">
+        <div class="cart-img mx-2">
+          <%= image_tag med.image %>
+        </div>
+        <div>
+          <p class="m-0 pt-2"><strong><%= med.name %></strong></p>
+          <p class="m-0" style="color:#038006;"><strong>EGP - <%= med.price %></strong></p>
+          <p class="m-0"><strong>Quantity: <%= cart.quantity %></strong></p>
+          <p>
+            <% if med.availability == "true" %>
+              <i class="fa fa-check-circle"></i> Available for delivery
+            <% else %>
+              <i class="fa fa-times-circle"></i> Sorry, not available now
+            <% end %>
+          </p>
+          <%
+=begin%>
+ <%= link_to "", edit_cart_path(cart), class:"btn btn-warning btn-sm fa fa-edit" %> 
+<%
+=end%>
+          <div class="position-absolute cart-controls"> <%= link_to '', cart, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger fas fa-trash" %></div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
+  <% else %>
+    <h3 class="alert alert-warning">Your cart is empty...</h3>
+  <% end %>
+</div>
+<br><br>
+<br><br>

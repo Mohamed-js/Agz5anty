@@ -3,12 +3,11 @@ class CartsController < ApplicationController
 
   # GET /carts or /carts.json
   def index
-    @carts = Cart.all
+    @carts = Cart.where(user_id: current_user.id)
   end
 
   # GET /carts/1 or /carts/1.json
   def show
-
   end
 
   # GET /carts/new
@@ -26,8 +25,9 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: "Cart was successfully created." }
-        format.json { render :show, status: :created, location: @cart }
+        format.html { redirect_to request.referrer, notice: "Added seccessfully." }
+
+        format.json { render :show, status: :created, location: request.referrer }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @cart.errors, status: :unprocessable_entity }
@@ -65,12 +65,12 @@ class CartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_params
-      id = params[:cart][:item]
-      med = Medication.find(id)
-      name = med.name
-      price = med.price
-      params[:cart][:item] = name
-      params[:cart][:price] = price
+      # id = params[:cart][:item]
+      # med = Medication.find(id)
+      # name = med.name
+      # price = med.price
+      # params[:cart][:item] = name
+      # params[:cart][:price] = price
       params.require(:cart).permit(:item, :quantity,:price)
     end
 end
