@@ -1,37 +1,25 @@
-<%= form_with(model: cart) do |form| %>
-  <% if cart.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
+    <%= form_with(model: cart) do |form| %>
+      <% if cart.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
 
-      <ul>
-        <% cart.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% cart.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :item %>
-    <%= form.text_field :item %>
-  </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-  </div>
+        <div class="field max-width2 center">
+          <%= form.number_field :quantity, class:"form-control" %>
+        </div>
+        
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="actions">
+          <%= form.submit "Update", class:" btn btn-success" %>
+          <%= link_to 'Back', carts_path, class:"btn btn-secondary m-2"%>
+        </div>
+      
+    <% end %>

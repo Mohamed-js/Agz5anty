@@ -952,6 +952,22 @@ footer h3 {
     width: 22px;
     font-size: 12px;
     color: black;
-    background-color: rgb(255, 145, 0);
+    background-color: #ffc107;
     text-align: center;
 }
+
+.total {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 60px;
+    background-color: white;
+    border-top: rgba(155, 155, 155, .3) solid 1px;
+}
+
+.checkout {
+    padding: 15px;
+    margin: 0;
+    background-color: #ffc107;
+}
+

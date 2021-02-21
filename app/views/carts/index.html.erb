@@ -3,8 +3,14 @@
   <% unless @carts.empty? %>
   <br>
     <h2><strong>Cart Items</strong></h2>
+    <%
+      total = 0
+      total_items = 0
+    %>
     <% @carts.each do |cart| %>
       <% med = Medication.find(cart.item)%>
+      <% total_items = total_items + (cart.quantity)%>
+      <% total = total + ((med.price) * (cart.quantity))%>
       <div class="d-flex cart-item p-2 my-3 border rounded align-items-center position-relative">
         <div class="cart-img mx-2">
           <%= image_tag med.image %>
@@ -20,12 +26,10 @@
               <i class="fa fa-times-circle"></i> Sorry, not available now
             <% end %>
           </p>
-          <%
-=begin%>
- <%= link_to "", edit_cart_path(cart), class:"btn btn-warning btn-sm fa fa-edit" %> 
-<%
-=end%>
-          <div class="position-absolute cart-controls"> <%= link_to '', cart, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger fas fa-trash" %></div>
+          
+
+          <div class="position-absolute cart-controls"> <%= link_to "", edit_cart_path(cart), class:"btn btn-warning btn-sm fa fa-edit" %> 
+          <%= link_to '', cart, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger fas fa-trash" %></div>
         </div>
       </div>
     <% end %>
@@ -33,5 +37,18 @@
     <h3 class="alert alert-warning">Your cart is empty...</h3>
   <% end %>
 </div>
+
+
 <br><br>
 <br><br>
+<br><br>
+<br><br>
+
+<div class="total ">
+  <div class="pt-3">
+    <p><strong><%= total_items %></strong> items in the cart - <strong> EGP <%= total %> </strong></p>
+  </div>
+  <strong><%= link_to "CHECKOUT", '', class:"btn btn-warning w-100 checkout" %></strong>
+</div>
+
+
