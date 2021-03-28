@@ -61,12 +61,6 @@ class CartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_params
-      # id = params[:cart][:item]
-      # med = Medication.find(id)
-      # name = med.name
-      # price = med.price
-      # params[:cart][:item] = name
-      # params[:cart][:price] = price
       params.require(:cart).permit(:item, :quantity,:price)
     end
 end

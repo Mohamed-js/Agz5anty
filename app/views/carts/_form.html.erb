@@ -1,4 +1,4 @@
-    <%= form_with(model: cart) do |form| %>
+<%= form_with(model: cart) do |form| %>
     <% if cart.errors.any? %>
     <div id="error_explanation">
         <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
