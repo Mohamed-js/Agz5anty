@@ -1,3 +1,27 @@
+<%= form_with url: "/new_order", method: :post  do |form| %>
 
+<div class="field ar">
+    <%= form.label "المدينة" %>
+    <%= form.select :city, options_for_select(["كفر الدوار"]), class:"form-control" %>
+</div>
 
-<%= button_to "Order", "/new_order", method: :post %>
+<div class="field ar">
+    <%= form.label "المكان" %>
+    <%= form.select :center, options_for_select(["الحدائق","سيدي شحاتة","التمليك", "السناهرة", "مدخل كفر الدوار", "كفر الدوار", "شارع المحكمة"]), class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "العنوان بالتفصيل" %>
+    <%= form.text_field :address, class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "المحمول" %>
+    <%= form.text_field :phone, class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= button_to "اطلب", class:"btn btn-block btn-success" %>
+</div>
+
+<% end %>

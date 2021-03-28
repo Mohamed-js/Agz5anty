@@ -1,5 +1,6 @@
 class AppController < ApplicationController
     before_action :authenticate_user!, except: %i[index]
+
     def index
     end
 
@@ -8,6 +9,7 @@ class AppController < ApplicationController
     end
 
     def checkout
+        @hello = Order.new
     end
 
     def orders
@@ -30,5 +32,8 @@ class AppController < ApplicationController
                 cart.delete
             end
         end
+        redirect_to carts_path, notice: "Ordered successfully."
     end
+
+
 end

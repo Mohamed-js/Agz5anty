@@ -1,24 +1,41 @@
 <section class="cover flex-col">
     <div class="gradient"></div>
+
     <div class="max-width center cover-text">
+      <h1 class="logo-name">
+        Wait for our surprises soon!
+      </h1>
+    </div>
+
+    <%
+=begin%>
+ <div class="max-width center cover-text">
       <h1 class="logo-name">
         OTC Diagnoser
       </h1>
       <h3 class="slogan">
         Our dream is to make sure that every patient has the right medical care to achieve the minimal risk of drug administration.
       </h3>
-    </div>
+    </div>   
+<%
+=end%>
   </section>
 
   <h2 id="services" class="center our-services-h"><b>Services:</b></h2>
+  <br><br>
   <section class="services flex-row center max-width">
-    <div class="service service1 center flex-row">
+    <%
+=begin%>
+ <div class="service service1 center flex-row">
         <a href="history.php" class="flex-col center">
             <h3 class="center">
                 Consultation
             </h3>
         </a>
-    </div>
+    </div> 
+<%
+=end%>
+
 
     <div class="service service2 center flex-row">
         <a href="/cats" class="flex-col center">
@@ -27,8 +44,10 @@
             </h3>
         </a>
     </div>
-
-    <!-- <div class="service service3 center flex-row">
+  </section>
+  <hr>
+  <section class="services flex-row center max-width">
+    <div class="service service3 center flex-row">
         <a href="history.php" class="flex-col center">
             <h3 class="center">
                 Hair & Skin care
@@ -74,11 +93,13 @@
                 Babies
             </h3>
         </a>
-    </div> -->
+    </div>
 
   </section>
 
-<main>
+<%
+=begin%>
+ <main>
     <!-- Steps -->
     <section class="steps-container">
       <h2 class="center"><b>
@@ -119,7 +140,9 @@
         </div>
       </div>
     </section>
-</main>
+</main> 
+<%
+=end%>
 
 
 

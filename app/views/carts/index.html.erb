@@ -13,7 +13,9 @@
       <% total = total + ((med.price) * (cart.quantity))%>
       <div class="d-flex cart-item p-2 my-3 border rounded align-items-center position-relative">
         <div class="cart-img mx-2">
+        <% if med.image.attached? %>
           <%= image_tag med.image %>
+        <% end %>  
         </div>
         <div>
           <p class="m-0 pt-2"><strong><%= med.name %></strong></p>
@@ -43,12 +45,13 @@
 <br><br>
 <br><br>
 <br><br>
-
+<% if total %>
 <div class="total ">
   <div class="pt-3">
     <p><strong><%= total_items %></strong> items in the cart - <strong> EGP <%= total %> </strong></p>
   </div>
   <strong><%= link_to "CHECKOUT", '/checkout', method: :get, class:"btn btn-warning w-100 checkout" %></strong>
 </div>
+  <% end %>
 
 

@@ -3,8 +3,13 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where(done: nil).order(id: "desc")
   end
+
+  def sellings
+    @sales = Order.where(done: true).order(id: "desc")
+  end
+  
 
   # GET /orders/1 or /orders/1.json
   def show
@@ -33,6 +38,15 @@ class OrdersController < ApplicationController
       end
     end
   end
+
+  def sell
+    item = Order.find(params[:id])
+    item.done = true
+    if item.save
+      redirect_to request.referrer
+    end
+  end
+  
 
   # PATCH/PUT /orders/1 or /orders/1.json
   def update

@@ -5,8 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-    font-family: 'Changa', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 a {
@@ -35,7 +34,6 @@ ul.none li {
 
 body > nav.navbar.navbar-light.sticky-top.bg-light > ul > li > a {
     color: rgb(214, 214, 214) ;
-    /* margin: 0; */
 }
 
 .choice {
@@ -105,7 +103,7 @@ label {
 
 .navbar {
     background-color: #171719 !important;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .navbar a {
@@ -114,8 +112,12 @@ label {
 }
 
 .navbar a img {
-    height: 80px;
+    height: 50px;
     width: auto;
+}
+
+.navbar a i {
+    margin-right: 10px;
 }
 
 .fa-shopping-cart {
@@ -124,7 +126,7 @@ label {
 
 .cover {
     position: relative;
-    height: 340px;
+    height: 300px;
     text-align: center;
     background: url(medical3.jpg) no-repeat;
     background-size: cover;
@@ -151,7 +153,7 @@ label {
 .cover-text h1 {
     font-weight: bold;
     color: #038006;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 h3.slogan {
@@ -297,7 +299,7 @@ h3.cat-name {
 }
 
 .service6 {
-    background: url(she.jpg) no-repeat;
+    background: url(he.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 0;
@@ -305,7 +307,7 @@ h3.cat-name {
 }
 
 .service7 {
-    background: url(he.jpg) no-repeat;
+    background: url(she.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 0;
@@ -856,7 +858,7 @@ footer h3 {
 }
 
 .sidebar {
-    width: 200px; background-color:#171719; position:fixed; top:95px; z-index:1000; color: white; left: -200px;
+    width: 200px; background-color:#171719; position:fixed; top:0px; z-index:1000; color: white; left: -200px;
 }
 
 .sidebar-toggle {
@@ -969,5 +971,45 @@ footer h3 {
     padding: 15px;
     margin: 0;
     background-color: #ffc107;
+}
+
+.ar {
+    direction: rtl;
+}
+
+.field.ar {
+    max-width: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+}
+
+.orders-table {
+    width: 90%;
+    margin: 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 4px;
 }
 

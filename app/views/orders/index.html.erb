@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1 class="m-3">Orders</h1>
 
-<table>
+<table class = "orders-table">
   <thead>
     <tr>
       <th>Item</th>
@@ -23,12 +23,12 @@
         <td><%= order.item %></td>
         <td><%= order.quantity %></td>
         <td><%= order.tprice %></td>
-        <td><%= order.user_id %></td>
+        <td><%= order.user.name %></td>
         <td><%= order.phone %></td>
         <td><%= order.city %></td>
         <td><%= order.center %></td>
         <td><%= order.address %></td>
-        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Sold', "/sold/#{order.id}", method: :post %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, class:"btn btn-success m-3" %>
