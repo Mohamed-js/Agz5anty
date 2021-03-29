@@ -1,0 +1,2 @@
+module CosmMedsHelper
+end

@@ -1,0 +1,65 @@
+<div class="max-width2 center show p-2 position-relative">
+    <br><br>
+
+    <% if @medication.image.attached? %>
+    <%= image_tag @medication.image, class:"show-img" %>
+    <% end %>
+
+    <hr>
+    <h6 class="flex-row">
+        <strong> <%= @medication.name %> </strong>
+    </h6>
+    <p class="show-price">EGP <%= @medication.price %></p>
+
+
+
+    <div class="row w-100 text-left m-auto">
+        <div class="col-4">
+            <strong>
+                <p>Description:</p>
+            </strong>
+        </div>
+        <div class="col-8">
+            <p><%= @medication.description %></p>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="row w-100 text-left m-auto">
+        <button type="button" class="btn btn-success btn-block btn-lg m-0 add-to-cart">Add to cart <i class="fa fa-shopping-cart color-white"></i></button>
+    </div>
+
+    <div class="position-absolute mod">
+        <div>
+            <%= form_with(model: @cart) do |form| %>
+            <div class="field my-3">
+                <button type="button" class="min btn btn-danger"> <i class="fa fa-minus color-white"></i></button>
+                <%= form.number_field :quantity, class:"form-control mx-3", value:1, min:1 %>
+                <button type="button" class="add btn btn-success"> <i class="fa fa-plus color-white"></i></button>
+            </div>
+            <%= form.hidden_field :item, value: @medication.id %>
+            <div class="actions w-100">
+                <%= form.submit "Add", class:"btn btn-success my-1 w-100"%>
+                <button type="button" class="btn btn-secondary my-1 w-100 close-mod">Close</button>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<br><br>

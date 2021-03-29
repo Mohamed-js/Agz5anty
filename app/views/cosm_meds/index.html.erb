@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cosm Meds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Main</th>
+      <th>Img</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cosm_meds.each do |cosm_med| %>
+      <tr>
+        <td><%= cosm_med.name %></td>
+        <td><%= cosm_med.description %></td>
+        <td><%= cosm_med.main %></td>
+        <td><%= cosm_med.img %></td>
+        <td><%= cosm_med.quantity %></td>
+        <td><%= link_to 'Show', cosm_med %></td>
+        <td><%= link_to 'Edit', edit_cosm_med_path(cosm_med) %></td>
+        <td><%= link_to 'Destroy', cosm_med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cosm Med', new_cosm_med_path %>

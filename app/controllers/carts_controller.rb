@@ -18,11 +18,17 @@ class CartsController < ApplicationController
   # POST /carts or /carts.json
   def create
     @cart = current_user.carts.build(cart_params)
+    if request.referrer.include? "medications"
+      @cart.ordered = "true"
+    end
+    if request.referrer.include? "cosm"
+      @cart.ordered = "false"
+    end
+    
 
     respond_to do |format|
       if @cart.save
         format.html { redirect_to request.referrer, notice: "Added seccessfully." }
-
         format.json { render :show, status: :created, location: request.referrer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -61,6 +67,6 @@ class CartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_params
-      params.require(:cart).permit(:item, :quantity,:price)
+      params.require(:cart).permit(:item, :quantity, :price)
     end
 end
