@@ -20,7 +20,7 @@
         <td><%= cosm_med.name %></td>
         <td><%= cosm_med.description %></td>
         <td><%= cosm_med.main %></td>
-        <td><%= cosm_med.img %></td>
+        <td><%= image_tag cosm_med.image_url if cosm_med.image %></td>
         <td><%= cosm_med.quantity %></td>
         <td><%= link_to 'Show', cosm_med %></td>
         <td><%= link_to 'Edit', edit_cosm_med_path(cosm_med) %></td>

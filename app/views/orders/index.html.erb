@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Item</th>
+      <th>IMG</th>
       <th>Quantity</th>
       <th>Tprice</th>
       <th>User</th>
@@ -21,6 +22,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.item %></td>
+        <td><%= image_tag order.image_url, style:'max-height:50px' if order.image %></td>
         <td><%= order.quantity %></td>
         <td><%= order.tprice %></td>
         <td><%= order.user.name %></td>

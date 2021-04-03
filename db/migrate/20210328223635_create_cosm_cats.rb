@@ -3,7 +3,7 @@ class CreateCosmCats < ActiveRecord::Migration[6.1]
     create_table :cosm_cats do |t|
       t.string :parent
       t.string :name
-      t.string :img
+      t.text :image_data
 
       t.timestamps
     end

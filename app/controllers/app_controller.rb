@@ -25,7 +25,11 @@ class AppController < ApplicationController
         code = @carts[0].id
 
         @carts.each do |cart|
-            item = Medication.find(cart.item)
+            if cart.ordered == "true"
+                item = Medication.find(cart.item)
+            elsif cart.ordered == "false"
+                item = CosmMed.find(cart.item)
+            end
             tprice = cart.quantity * item.price
             ord = Order.new(item: item.name, quantity: cart.quantity ,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code)
             if ord.save 

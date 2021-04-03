@@ -23,10 +23,8 @@
       <tr>
         <td><%= category.id %></td>
         <td><%= category.name %></td>
-        <td><%= category.img %></td>
-        <% if category.image.attached? %>
-          <td><%= image_tag category.image, style:"height:60px;" %></td>
-        <% end %>
+        <td> <%= image_tag category.image_url, style:'max-height:50px' if category.image %></td>
+       
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>

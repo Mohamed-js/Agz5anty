@@ -5,8 +5,8 @@
     <div class="card">
 
         <div class="p-1 pb-0 product-img ">
-        <% if medication.image.attached? %>
-            <%= image_tag medication.image %>
+        <% if medication.image %>
+            <%= image_tag medication.image_url %>
         <% end %>    
         </div>
 

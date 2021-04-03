@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_224015) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "img"
+    t.text "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_224015) do
   create_table "cosm_cats", force: :cascade do |t|
     t.string "parent"
     t.string "name"
-    t.string "img"
+    t.text "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_224015) do
     t.string "name"
     t.text "description"
     t.integer "cosm_cat_id"
-    t.string "img"
+    t.string "image_data"
     t.integer "quantity"
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_224015) do
     t.string "shape"
     t.string "dose"
     t.integer "quantity"
-    t.string "img"
+    t.text "image_data"
     t.string "availability"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_224015) do
     t.string "city"
     t.string "center"
     t.text "address"
+    t.text "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "code"

@@ -1,9 +1,7 @@
 <div class="max-width2 center show p-2 position-relative">
     <br><br>
 
-    <% if @medication.image.attached? %>
-    <%= image_tag @medication.image, class:"show-img" %>
-    <% end %>
+    <%= image_tag @medication.image_url if @medication.image %>
 
     <hr>
     <h6 class="flex-row">

@@ -4,7 +4,7 @@ class CreateCosmMeds < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.integer :cosm_cat_id
-      t.string :img
+      t.string :image_data
       t.integer :quantity
       t.integer :price
 

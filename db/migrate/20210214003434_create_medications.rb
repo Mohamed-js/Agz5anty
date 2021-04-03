@@ -10,7 +10,7 @@ class CreateMedications < ActiveRecord::Migration[6.1]
       t.string :shape
       t.string :dose
       t.integer :quantity
-      t.string :img
+      t.text :image_data
       t.string :availability
 
       t.timestamps

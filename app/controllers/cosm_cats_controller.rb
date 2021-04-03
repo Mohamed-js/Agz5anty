@@ -70,6 +70,6 @@ class CosmCatsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cosm_cat_params
-      params.require(:cosm_cat).permit(:name, :img)
+      params.require(:cosm_cat).permit(:name, :image, :parent)
     end
 end

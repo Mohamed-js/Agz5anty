@@ -19,9 +19,9 @@
     <% total = total + ((med.price) * (cart.quantity))%>
     <div class="d-flex cart-item p-2 my-3 border rounded align-items-center position-relative">
         <div class="cart-img mx-2">
-            <% if med.image.attached? %>
-            <%= image_tag med.image %>
-            <% end %>
+            
+            <%= image_tag med.image_url if med.image %>
+            
         </div>
         <div>
             <p class="m-0 pt-2"><strong><%= med.name.capitalize %></strong></p>

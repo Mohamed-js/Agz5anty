@@ -5,6 +5,12 @@
   <%= @order.item %>
 </p>
 
+
+<p>
+  <strong>Item:</strong>
+  <%= image_tag @order.image_url if @order.image %>
+</p>
+
 <p>
   <strong>Quantity:</strong>
   <%= @order.quantity %>

@@ -9,6 +9,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.string :city
       t.string :center
       t.text :address
+      t.text :image_data
 
       t.timestamps
     end

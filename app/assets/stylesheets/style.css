@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Changa', sans-serif;
 }
 
 a {
@@ -278,6 +278,22 @@ h3.cat-name {
     /* border-top-left-radius: 5pc; */
     margin-top: 20px;
     background: url(beauty.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.service9 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    /* border-bottom-left-radius: 10px; */
+    /* border-top-left-radius: 5pc; */
+    margin-top: 20px;
+    background: url(beauty2.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     margin-left: 10px;
