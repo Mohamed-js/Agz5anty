@@ -8,12 +8,13 @@ class AppController < ApplicationController
         @categories= Category.all
     end
 
+    def prescription
+        @order = Order.new
+    end
+    
+
     def checkout
         @hello = Order.new
-    end
-
-    def orders
-        # @orders = Cart.where(ordered: "t")
     end
 
     def new_order
@@ -38,6 +39,4 @@ class AppController < ApplicationController
         end
         redirect_to carts_path, notice: "Ordered successfully."
     end
-
-
 end

@@ -300,6 +300,22 @@ h3.cat-name {
     margin-right: 10px;
 }
 
+.service10 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    /* border-bottom-left-radius: 10px; */
+    /* border-top-left-radius: 5pc; */
+    margin-top: 20px;
+    background: url(prescription.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .service4 {
     height: 160px;
     width: 100%;
