@@ -1,5 +1,5 @@
 class AppController < ApplicationController
-    before_action :authenticate_user!, except: %i[index]
+    before_action :authenticate_user!
 
     def index
     end
@@ -31,7 +31,7 @@ class AppController < ApplicationController
                 item = CosmMed.find(cart.item)
             end
             tprice = cart.quantity * item.price
-            ord = Order.new(item: item.name, quantity: cart.quantity ,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code)
+            ord = Order.new(item: item.name, quantity: cart.quantity ,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code, notes: params[:notes])
             if ord.save 
                 cart.delete
             end

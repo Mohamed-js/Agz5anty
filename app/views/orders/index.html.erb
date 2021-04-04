@@ -2,7 +2,7 @@
 
 <h1 class="m-3">Orders</h1>
 
-<table class = "orders-table">
+<table class = "orders-table" id = 'orders-table'>
   <thead>
     <tr>
       <th>Item</th>
@@ -14,6 +14,7 @@
       <th>City</th>
       <th>Center</th>
       <th>Address</th>
+      <th>Notes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,6 +31,7 @@
         <td><%= order.city %></td>
         <td><%= order.center %></td>
         <td><%= order.address %></td>
+        <td><%= order.notes %></td>
         <td><%= link_to 'Sold', "/sold/#{order.id}", method: :post %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,3 +43,4 @@
 <br>
 
 <%= link_to 'New Order', new_order_path, class:"btn btn-success m-3" %>
+ <%= audio_tag "/assets/alarm.mp3", id:"myAudio"%>
