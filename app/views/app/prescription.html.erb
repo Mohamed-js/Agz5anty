@@ -1,4 +1,10 @@
-<%= form_with url: "/new_prescription", method: :patch  do |form| %>
+<%= form_with  url:"/n_prescription", method: :post do |form| %>
+
+
+<div class="field ar">
+    <%= form.label "الصورة" %>
+    <%= form.file_field :image, class:"form-control" %>
+</div>
 
 <div class="field ar">
     <%= form.label "المدينة" %>
@@ -22,11 +28,12 @@
 
 <div class="field ar">
     <%= form.label "ملاحظات" %>
-    <%= form.text_field :notes, class:"form-control" %>
+    <%= form.text_area :notes, size: "40x10"%>
 </div>
+
+<%= form.hidden_field :user_id, value:current_user.id  %>
 
 <div class="field ar">
-    <%= button_to "اطلب", class:"btn btn-block btn-success" %>
+    <%= form.submit 'Order', class:'form-control btn-success' %>
 </div>
-
 <% end %>

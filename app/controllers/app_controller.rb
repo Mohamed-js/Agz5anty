@@ -11,6 +11,22 @@ class AppController < ApplicationController
     def prescription
         @order = Order.new
     end
+
+    def n_prescription
+        city = params[:city]
+        center = params[:center]
+        address = params[:address]
+        phone = params[:phone]
+        notes = params[:notes]
+        usr = params[:user_id]
+        img = params[:image]
+
+        ord = Order.new(user_id: usr, phone: phone, city: city, center: center, address: address, notes: notes, image: img)
+        if ord.save
+            redirect_to root_path, notice: "Ordered successfully."
+        end
+    end
+    
     
 
     def checkout

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "app#index"
   get "/cats", to:"app#cats"
   get "/prescription", to:"app#prescription"
+  post "/n_prescription", to:"app#n_prescription"
 
   get "/checkout", to:"app#checkout"
   post "/new_order", to:"app#new_order"
