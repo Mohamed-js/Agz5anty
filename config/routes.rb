@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :medications
   resources :carts
   get "/cosm_cats/cat/:name", to: "cosm_cats#cats"
+
+  get "/search", to:"search#index"
+  post "/search", to:"search#index"
 end

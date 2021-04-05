@@ -1,8 +1,39 @@
-<div class="sticky-top">
-  <nav class="navbar navbar-light sticky-top bg-light ">
+<div class="sticky-top navv">
+  <nav class="navbar navbar-light sticky-top bg-light max-width m-auto">
     <%= link_to  root_path  ,class:"navbar-brand color-white" do %>
       <%= image_tag "meed2.jpg", class: "d-inline-block align-top" %>
       <h5 class="center">أجز<span class="green">خ</span>انتي</h5>
     <% end %>
+    <div class="navbar-brand">
+      <%= link_to "/search" , class:"navbar-brand color-white m-0 mr  -4" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <%= link_to  'بحث', "/search" ,class:"navbar-brand color-white m-0 "  %>
+    </div>
+
+    <div class="d-flex inner-nav">
+        <p class="nav-item navbar-brand color-white m-0 mx-4">
+          <a class="nav-link" href="/prescription">اطلب روشتتك</a>
+        </p>
+
+        <p class="nav-item navbar-brand color-white m-0 mx-4">
+          <a class="nav-link" href="/cats">تصفح الأدوية</a>
+        </p>
+
+        <p class="nav-item navbar-brand color-white m-0 mx-4">
+          <a class="nav-link" href="/cosm_cats/cat/skin">العناية بالبشرة</a>
+        </p>
+
+        <p class="nav-item navbar-brand color-white m-0 mx-4">
+          <a class="nav-link" href="/cosm_cats/cat/beauty">مستحضرات التجميل</a>
+        </p>
+    </div>
+
+    <div class="search-bar">
+
+    </div>
+    
+      
+
   </nav>
 </div>

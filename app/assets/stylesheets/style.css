@@ -111,9 +111,24 @@ label {
     align-items: flex-end;
 }
 
+.navv {
+    background-color: #171719;
+}
+
+.inner-nav {
+    margin: auto;
+    display: none!important;
+}
+
+.navbar.navbar-light {
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar {
     background-color: #171719 !important;
-    justify-content: space-between;
+    justify-content: end;
+    padding: 12px;
 }
 
 .navbar a {
@@ -639,6 +654,16 @@ footer h3 {
 @media only screen and (min-width: 767px){
     .cover {
         height: 400px;
+    }
+
+    .inner-nav {
+        margin: 0;
+        display: flex!important;
+    }
+
+    .navbar.navbar-light {
+        display: flex;
+        flex-direction: row;
     }
 
     .service {
