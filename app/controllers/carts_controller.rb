@@ -28,7 +28,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to request.referrer, notice: "Added seccessfully." }
+        format.html { redirect_to request.referrer, notice: "تمت الاضافة لعربة المشتريات." }
         format.json { render :show, status: :created, location: request.referrer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to carts_path, notice: "Cart was successfully updated." }
+        format.html { redirect_to carts_path, notice: "تم التعديل بنجاح." }
         format.json { render :show, status: :ok, location: carts_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
+      format.html { redirect_to carts_url, notice: "تمت ازالة المنتج من العربة." }
       format.json { head :no_content }
     end
   end

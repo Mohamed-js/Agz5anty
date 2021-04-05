@@ -22,11 +22,12 @@
 
 <div class="field ar">
     <%= form.label "ملاحظات" %>
-    <%= form.text_area :notes, size: "40x10"%>
+    <%= form.text_area :notes , style: "width: 100%; min-height:100px;" %>
 </div>
 
 <div class="field ar">
-    <%= button_to "اطلب", class:"btn btn-block btn-success" %>
+    <%= form.submit 'اطلب', class:'form-control btn-success' %>
 </div>
 
 <% end %>
+<br><br><br>

@@ -2,31 +2,7 @@
   <nav class="navbar navbar-light sticky-top bg-light ">
     <%= link_to  root_path  ,class:"navbar-brand color-white" do %>
       <%= image_tag "meed2.jpg", class: "d-inline-block align-top" %>
+      <h5 class="center">أجز<span class="green">خ</span>انتي</h5>
     <% end %>
-    <ul class="max-width none">
-      <li>
-        <%= link_to "<i class='fas fa-home color-white'></i><span class='home-link color-white'>Home</span>".html_safe, root_path, class:"navbar-brand" %>
-      </li>
-      <li><a class="navbar-brand color-white" href="/#about"> <i class="fas fa-user"></i> About</a></li>
-      <li><a class="navbar-brand color-white" href="/#services"> <i class="fas fa-bars"></i> Services</a></li>
-      <li><a class="navbar-brand color-white" href="/#contact"> <i class="fas fa-phone"></i> Contact</a></li>
-    </ul>
-    <%
-=begin%>
- <%= link_to  root_path  ,class:"navbar-brand color-white" do %>
-      <i class = "fas fa-search"> </i>
-    <% end %> 
-<%
-=end%>
   </nav>
-
-  <%
-=begin%>
- <nav class="navbar navbar-light bg-light justify-content-between">
-    <form class="form-inline d-flex w-100">
-      <input class="form-control m-2 p-2" type="search" placeholder="Search medications..." aria-label="Search">
-    </form>
-  </nav> 
-<%
-=end%>
 </div>

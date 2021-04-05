@@ -66,6 +66,6 @@ class CosmMedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cosm_med_params
-      params.require(:cosm_med).permit(:name, :description, :cosm_cat_id, :image, :quantity, :price)
+      params.require(:cosm_med).permit(:name, :description, :cosm_cat_id, :image, :quantity, :price, :discount)
     end
 end

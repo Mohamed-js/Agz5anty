@@ -23,7 +23,7 @@ class AppController < ApplicationController
 
         ord = Order.new(user_id: usr, phone: phone, city: city, center: center, address: address, notes: notes, image: img)
         if ord.save
-            redirect_to root_path, notice: "Ordered successfully."
+            redirect_to root_path, notice: "تم الطلب بنجاح. شكرا لتعاملكم معنا."
         end
     end
     
@@ -53,6 +53,6 @@ class AppController < ApplicationController
                 cart.delete
             end
         end
-        redirect_to carts_path, notice: "Ordered successfully."
+        redirect_to carts_path, notice: "تم الطلب بنجاح. شكرا لتعاملكم معنا."
     end
 end

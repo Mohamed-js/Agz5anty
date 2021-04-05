@@ -1,16 +1,26 @@
 * {
     box-sizing: border-box;
+    transition: .1s;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Changa', sans-serif;
+    direction: rtl;
+}
+
+.en {
+    direction: ltr;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+a:hover {
+    color: #038006;
 }
 
 .color-white {
@@ -112,8 +122,17 @@ label {
 }
 
 .navbar a img {
-    height: 50px;
+    height: 70px;
     width: auto;
+}
+
+.logo {
+    color: #eae7e7;
+    font-weight: 300;
+}
+
+.green {
+    color: #038006;
 }
 
 .navbar a i {
@@ -301,19 +320,19 @@ h3.cat-name {
 }
 
 .service10 {
-    height: 160px;
-    width: 100%;
+    height: 145px;
+    /* width: 100%; */
     /* padding: 5px; */
     position: relative;
     border-radius: 0;
-    /* border-bottom-left-radius: 10px; */
-    /* border-top-left-radius: 5pc; */
-    margin-top: 20px;
+    border-top-left-radius: 10px;
+   
+    margin-top: 30px;
     background: url(prescription.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 14px;
+    margin-right: 14px;
 }
 
 .service4 {
@@ -584,6 +603,10 @@ footer h3 {
         height: 225px !important;
         width: 140px !important;
     }
+
+    .card2 {
+        height: 175px !important;
+    }
     
     .product-img {
         max-height: 110px;
@@ -851,6 +874,15 @@ footer h3 {
     width: 124px;
 }
 
+.card2 {
+    height: 175px !important;
+}
+
+.card3 {
+    height: 205px !important;
+}
+
+
 .meds {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
@@ -882,7 +914,7 @@ footer h3 {
 }
 
 .show p {
-    text-align: left;
+    text-align: right;
 }
 
 .show-price {
@@ -890,7 +922,11 @@ footer h3 {
 }
 
 .sidebar {
-    width: 200px; background-color:#171719; position:fixed; top:0px; z-index:1000; color: white; left: -200px;
+    width: 200px; background-color:#171719; position:fixed; top:0px; z-index:1000; color: white; right: -200px;
+}
+
+.sidebar ul {
+    padding: 15px;
 }
 
 .sidebar-toggle {
@@ -899,19 +935,19 @@ footer h3 {
 
 @keyframes slideIn {
     from {
-        left: -200px;
+        right: -200px;
     }
     to {
-        left: 0px;
+        right: 0px;
     }
 }
 
 @keyframes slideOut {
     from {
-        left: 0px;
+        right: 0px;
     }
     to {
-        left: -200px;
+        right: -200px;
     }
 }
 
@@ -972,7 +1008,7 @@ footer h3 {
 
 .cart-controls {
     top: 12px;
-    right: 12px;
+    left: 12px;
 }
 
 .cart-count {
