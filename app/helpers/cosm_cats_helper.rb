@@ -1,0 +1,2 @@
+module CosmCatsHelper
+end

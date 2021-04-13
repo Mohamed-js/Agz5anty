@@ -32,11 +32,9 @@
           <td><%= medication.shape %></td>
           <td><%= medication.dose %></td>
           <td><%= medication.quantity %></td>
-          <% if medication.image.attached? %>
-            <td><%= image_tag medication.image, style:"height:50px;" %></td>
-          <%else%>
-            <td> - </td>
-          <% end %>
+          <td><%= image_tag medication.image_url, style:"height:50px;" if medication.image %></td>
+            
+          
           <td><%= medication.availability %></td>
           <td><%= link_to 'Show', medication, class:"btn btn-success py-1 px-1" %></td>
           <td><%= link_to 'Edit', edit_medication_path(medication), class:"btn btn-warning py-1 px-1" %></td>
@@ -50,7 +48,13 @@
   
 
   <%= link_to 'New +', new_medication_path, class:"btn btn-success py-1 px-2 m-3" %>
+>
 
+
+
+
+
+ 
 
   <table >
 

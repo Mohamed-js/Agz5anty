@@ -12,10 +12,11 @@
   <% end %>
 
   <div class="field">
-    <% if category.image.attached? %>
-      <%= image_tag category.image, style: "width:200px;" %>
+    <% if category.image %>
+      <%= image_tag category.image_url, style: "width:200px;" %>
     <% end %>
 
+    <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
 

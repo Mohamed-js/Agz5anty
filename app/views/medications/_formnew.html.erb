@@ -54,8 +54,8 @@
   </div>
 <br>
   <div class="field">
-    <% if medication.image.attached? %>
-      <%= image_tag medication.image, style: "width:200px;" %>
+    <% if medication.image %>
+      <%= image_tag medication.image_url, style: "width:200px;" %>
     <% end %>
     <%= form.file_field :image, class:"form-control" %>
   </div>

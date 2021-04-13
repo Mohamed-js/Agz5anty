@@ -1,0 +1,43 @@
+<%= form_with  url:"/n_prescription", method: :post do |form| %>
+
+
+<div class="field ar">
+    <%= form.label "صورة الروشتة" %>
+    <%= form.file_field :image, class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "المدينة" %>
+    <%= form.select :city, options_for_select(["كفر الدوار"]), class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "المكان" %>
+    <%= form.select :center, options_for_select(["الحدائق","سيدي شحاتة","التمليك", "السناهرة", "مدخل كفر الدوار", "كفر الدوار", "شارع المحكمة"]), class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "العنوان بالتفصيل" %>
+    <%= form.text_field :address, class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "المحمول" %>
+    <%= form.text_field :phone, class:"form-control" %>
+</div>
+
+<div class="field ar">
+    <%= form.label "ملاحظات" %>
+</div>
+
+<div class="field ar">
+    <%= form.text_area :notes , style: "width: 100%; min-height:100px;" %>
+</div>
+
+<%= form.hidden_field :user_id, value:current_user.id  %>
+
+<div class="field ar">
+    <%= form.submit 'اطلب', class:'form-control btn-success' %>
+</div>
+<% end %>
+<br><br><br>

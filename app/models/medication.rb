@@ -1,4 +1,4 @@
 class Medication < ApplicationRecord
+    include ImageUploader::Attachment(:image)
     belongs_to :category
-    has_one_attached :image
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_153015) do
+ActiveRecord::Schema.define(version: 2021_04_04_225413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,13 +50,35 @@ ActiveRecord::Schema.define(version: 2021_02_14_153015) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ordered"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "img"
+    t.text "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cosm_cats", force: :cascade do |t|
+    t.string "parent"
+    t.string "name"
+    t.text "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cosm_meds", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "cosm_cat_id"
+    t.string "image_data"
+    t.integer "quantity"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "discount"
+    t.string "brand"
   end
 
   create_table "medications", force: :cascade do |t|
@@ -69,11 +91,28 @@ ActiveRecord::Schema.define(version: 2021_02_14_153015) do
     t.string "shape"
     t.string "dose"
     t.integer "quantity"
-    t.string "img"
+    t.text "image_data"
     t.string "availability"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "item"
+    t.integer "quantity"
+    t.integer "tprice"
+    t.integer "user_id"
+    t.string "phone"
+    t.string "city"
+    t.string "center"
+    t.text "address"
+    t.text "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "code"
+    t.boolean "done"
+    t.text "notes"
   end
 
   create_table "users", force: :cascade do |t|

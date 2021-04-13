@@ -1,0 +1,32 @@
+<%= form_with(model: cosm_cat) do |form| %>
+  <% if cosm_cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cosm_cat.errors.count, "error") %> prohibited this cosm_cat from being saved:</h2>
+
+      <ul>
+        <% cosm_cat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parent %>
+    <%= form.text_field :parent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

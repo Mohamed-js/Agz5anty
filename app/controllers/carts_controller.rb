@@ -3,11 +3,7 @@ class CartsController < ApplicationController
 
   # GET /carts or /carts.json
   def index
-    @carts = Cart.all
-  end
-
-  # GET /carts/1 or /carts/1.json
-  def show
+    @carts = Cart.where(user_id: current_user.id)
   end
 
   # GET /carts/new
@@ -21,12 +17,19 @@ class CartsController < ApplicationController
 
   # POST /carts or /carts.json
   def create
-    @cart = Cart.new(cart_params)
+    @cart = current_user.carts.build(cart_params)
+    if request.referrer.include? "medications"
+      @cart.ordered = "true"
+    end
+    if request.referrer.include? "cosm"
+      @cart.ordered = "false"
+    end
+    
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: "Cart was successfully created." }
-        format.json { render :show, status: :created, location: @cart }
+        format.html { redirect_to request.referrer, notice: "تمت الاضافة لعربة المشتريات." }
+        format.json { render :show, status: :created, location: request.referrer }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @cart.errors, status: :unprocessable_entity }
@@ -38,8 +41,8 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: "Cart was successfully updated." }
-        format.json { render :show, status: :ok, location: @cart }
+        format.html { redirect_to carts_path, notice: "تم التعديل بنجاح." }
+        format.json { render :show, status: :ok, location: carts_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @cart.errors, status: :unprocessable_entity }
@@ -51,7 +54,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
+      format.html { redirect_to carts_url, notice: "تمت ازالة المنتج من العربة." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +67,6 @@ class CartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_params
-      params.require(:cart).permit(:item, :quantity, :price, :user_id)
+      params.require(:cart).permit(:item, :quantity, :price)
     end
 end

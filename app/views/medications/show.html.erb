@@ -1,23 +1,23 @@
-<div class="max-width2 center show p-2">
+<div class="max-width2 center show p-2 position-relative">
   <br><br>
-  <%= image_tag @medication.image, class:"show-img" %>
+  <%= image_tag @medication.image_url, class:'show-img' if @medication.image %>
   <hr>
   <h6 class="flex-row">
     <strong> <%= @medication.name %> <%= @medication.dose %> </strong> 
   </h6>
-    <p class="show-price">EGP <%= @medication.price %></p>
+    <p class="show-price">جم <%= @medication.price %></p>
     <p>
     <% if @medication.availability == "true" %>
-      <i class="fa fa-check-circle"></i> Available for delivery
+      <i class="fa fa-check-circle"></i> متاح للتوصيل
     <% else %>
-      <i class="fa fa-times-circle"></i> Sorry, not available now
+      <i class="fa fa-times-circle"></i> عذرا، هذا المنتج غير متاح للتوصيل الان
     <% end %>
     </p>
   
   
-  <div class="row text-left">
+  <div class="row w-100 text-left m-auto">
     <div class="col-4">
-      <strong><p>Description:</p></strong>
+      <strong><p>الوصف</p></strong>
     </div>
     <div class="col-8">
       <p><%= @medication.description %></p>
@@ -25,25 +25,60 @@
     </div>
   </div>
 
-  <div class="row text-left">
+  <div class="row w-100 text-left m-auto">
     <div class="col-4">
-      <strong><p>Dosage form:</p></strong>
+      <strong><p>الشكل:</p></strong>
     </div>
     <div class="col-8">
       <p><%= @medication.shape %></p>
     </div>
   </div>
 
-  <div class="row text-left">
+  <div class="row w-100 text-left m-auto">
     <div class="col-4">
-      <strong><p>Active ingredients:</p></strong>
+      <strong><p>المواد الفعالة الرئيسية:</p></strong>
     </div>
     <div class="col-8">
       <p><%= @medication.ingredients %></p>
     </div>
   </div>
 
+  
+
+  <div class="row w-100 text-left m-auto">
+    <button type="button" class="btn btn-success btn-block btn-lg m-0 add-to-cart">اضافة للعربة <i class="fa fa-shopping-cart color-white"></i></button>
+  </div>
+
+  <div class="position-absolute mod">
+    <div>
+      <%= form_with(model: @cart) do |form| %>
+        <div class="field my-3">
+          <button type="button" class="min btn btn-danger"> <i class="fa fa-minus color-white"></i></button>
+          <%= form.number_field :quantity, class:"form-control mx-3", value:1, min:1 %>
+          <button type="button" class="add btn btn-success"> <i class="fa fa-plus color-white"></i></button>
+        </div>
+        <%= form.hidden_field :item, value: @medication.id %>
+        <div class="actions w-100">
+          <%= form.submit "اضافة", class:"btn btn-success my-1 w-100"%>
+          <button type="button" class="btn btn-secondary my-1 w-100 close-mod">اغلاق</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
-<br><br>
-<br><br>
+<br><br><br>

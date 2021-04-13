@@ -2,14 +2,14 @@
 <div class="container max-width3 meds">
     <% @medications.each do |medication| %>
       <%= link_to medication_path(medication.id), class:"card-link m-auto" do %>
-        <div class="card">
+        <div class="card en">
           <div class="p-1 pb-0 product-img ">
-            <%= image_tag medication.image %>
+          <%= image_tag medication.image_url if medication.image %>  
           </div>
           <div class="product-info p-2 pt-0">
             <h6 class="card-title"><b><%= medication.name %></b></h6>
             <h6 class="card-text "><i><%= medication.shape %></i></h6>
-            <span class="card-text bg-warning px-1 rounded py-1"><%= medication.price %> EGP</span>
+            <span class="card-text bg-warning px-1 rounded"><%= medication.price %> EGP</span>
           </div>
         </div>
       <% end %>

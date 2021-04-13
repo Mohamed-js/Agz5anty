@@ -1,0 +1,21 @@
+<br><br>
+<div class="container max-width3 meds">
+    <% @cosm_cat.each do |medication| %>
+    <%= link_to cosm_cat_path(medication.id), class:"card-link m-auto" do %>
+    <div class="card card2">
+
+        <div class="p-1 pb-0 product-img ">
+        <% if medication.image %>
+            <%= image_tag medication.image_url %>
+        <% end %>    
+        </div>
+
+        <div class="product-info p-2 pt-0">
+            <h6 class="card-title"><b><%= medication.name %></b></h6>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
+<br><br>
+<br><br>

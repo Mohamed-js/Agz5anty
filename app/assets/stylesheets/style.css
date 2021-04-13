@@ -1,17 +1,26 @@
 * {
     box-sizing: border-box;
+    transition: .1s;
 }
 
 body {
     margin: 0;
     padding: 0;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-family: 'Changa', sans-serif;
+    direction: rtl;
+}
+
+.en {
+    direction: ltr;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+a:hover {
+    color: #038006;
 }
 
 .color-white {
@@ -35,7 +44,6 @@ ul.none li {
 
 body > nav.navbar.navbar-light.sticky-top.bg-light > ul > li > a {
     color: rgb(214, 214, 214) ;
-    /* margin: 0; */
 }
 
 .choice {
@@ -103,9 +111,24 @@ label {
     align-items: flex-end;
 }
 
+.navv {
+    background-color: #171719;
+}
+
+.inner-nav {
+    margin: auto;
+    display: none!important;
+}
+
+.navbar.navbar-light {
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar {
     background-color: #171719 !important;
-    justify-content: flex-start;
+    justify-content: end;
+    padding: 12px;
 }
 
 .navbar a {
@@ -114,8 +137,21 @@ label {
 }
 
 .navbar a img {
-    height: 80px;
+    height: 70px;
     width: auto;
+}
+
+.logo {
+    color: #eae7e7;
+    font-weight: 300;
+}
+
+.green {
+    color: #038006;
+}
+
+.navbar a i {
+    margin-right: 10px;
 }
 
 .fa-shopping-cart {
@@ -124,7 +160,7 @@ label {
 
 .cover {
     position: relative;
-    height: 340px;
+    height: 300px;
     text-align: center;
     background: url(medical3.jpg) no-repeat;
     background-size: cover;
@@ -151,7 +187,7 @@ label {
 .cover-text h1 {
     font-weight: bold;
     color: #038006;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 h3.slogan {
@@ -282,6 +318,38 @@ h3.cat-name {
     margin-right: 10px;
 }
 
+.service9 {
+    height: 160px;
+    width: 100%;
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    /* border-bottom-left-radius: 10px; */
+    /* border-top-left-radius: 5pc; */
+    margin-top: 20px;
+    background: url(beauty2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.service10 {
+    height: 145px;
+    /* width: 100%; */
+    /* padding: 5px; */
+    position: relative;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+   
+    margin-top: 30px;
+    background: url(prescription.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
 .service4 {
     height: 160px;
     width: 100%;
@@ -297,7 +365,7 @@ h3.cat-name {
 }
 
 .service6 {
-    background: url(she.jpg) no-repeat;
+    background: url(he.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 0;
@@ -305,7 +373,7 @@ h3.cat-name {
 }
 
 .service7 {
-    background: url(he.jpg) no-repeat;
+    background: url(she.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 0;
@@ -550,6 +618,10 @@ footer h3 {
         height: 225px !important;
         width: 140px !important;
     }
+
+    .card2 {
+        height: 175px !important;
+    }
     
     .product-img {
         max-height: 110px;
@@ -582,6 +654,16 @@ footer h3 {
 @media only screen and (min-width: 767px){
     .cover {
         height: 400px;
+    }
+
+    .inner-nav {
+        margin: 0;
+        display: flex!important;
+    }
+
+    .navbar.navbar-light {
+        display: flex;
+        flex-direction: row;
     }
 
     .service {
@@ -817,6 +899,15 @@ footer h3 {
     width: 124px;
 }
 
+.card2 {
+    height: 175px !important;
+}
+
+.card3 {
+    height: 205px !important;
+}
+
+
 .meds {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
@@ -848,7 +939,7 @@ footer h3 {
 }
 
 .show p {
-    text-align: left;
+    text-align: right;
 }
 
 .show-price {
@@ -856,28 +947,32 @@ footer h3 {
 }
 
 .sidebar {
-    width: 200px; background-color:#171719; position:fixed; top:95px; z-index:1000; color: white; left: -200px;
+    width: 200px; background-color:#171719; position:fixed; top:0px; z-index:1000; color: white; right: -200px;
+}
+
+.sidebar ul {
+    padding: 15px;
 }
 
 .sidebar-toggle {
-    background-color:#171719; position:relative; right:-170px; top: 110px; color: white; font-weight: bolder; border-top-right-radius: 80% 50%; border-bottom-right-radius:  80% 50%;
+   margin: 0!important; border-radius:0; color: white; font-size: 20px;
 }
 
 @keyframes slideIn {
     from {
-        left: -200px;
+        right: -200px;
     }
     to {
-        left: 0px;
+        right: 0px;
     }
 }
 
 @keyframes slideOut {
     from {
-        left: 0px;
+        right: 0px;
     }
     to {
-        left: -200px;
+        right: -200px;
     }
 }
 
@@ -911,3 +1006,103 @@ footer h3 {
 .grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+
+.mod {
+    top: 35%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    padding: 40px;
+    margin: auto;
+    height: 230px;
+    border: 1px solid rgba(128, 128, 128,.2);
+    border-radius: 10px;
+    display: none;
+}
+
+.mod .field {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-img img {
+    height: 110px;
+    width: 90px;
+    object-fit: cover;
+}
+
+.cart-controls {
+    top: 12px;
+    left: 12px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -15px;
+    right: -8px;
+    padding-top: 4px;
+    border: 1px solid rgba(160, 159, 159, .5);
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    font-size: 12px;
+    color: black;
+    background-color: #ffc107;
+    text-align: center;
+}
+
+.total {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 60px;
+    background-color: white;
+    border-top: rgba(155, 155, 155, .3) solid 1px;
+}
+
+.checkout {
+    padding: 15px;
+    margin: 0;
+    background-color: #ffc107;
+}
+
+.ar {
+    direction: rtl;
+}
+
+.field.ar {
+    max-width: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+}
+
+.orders-table {
+    width: 90%;
+    margin: 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+

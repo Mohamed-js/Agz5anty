@@ -7,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: project_development
+  database: agz5anty_development
 
 test:
   <<: *default
-  database: project_test
+  database: agz5anty_test
 
 production:
   <<: *default
-  database: project_production
+  database: agz5anty_production
   username: username
   password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
