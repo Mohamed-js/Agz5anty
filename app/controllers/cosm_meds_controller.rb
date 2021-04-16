@@ -15,10 +15,12 @@ class CosmMedsController < ApplicationController
   # GET /cosm_meds/new
   def new
     @cosm_med = CosmMed.new
+    @cosm_cats = CosmCat.all
   end
 
   # GET /cosm_meds/1/edit
   def edit
+    @cosm_cats = CosmCat.all
   end
 
   # POST /cosm_meds or /cosm_meds.json
@@ -27,8 +29,8 @@ class CosmMedsController < ApplicationController
 
     respond_to do |format|
       if @cosm_med.save
-        format.html { redirect_to @cosm_med, notice: "Cosm med was successfully created." }
-        format.json { render :show, status: :created, location: @cosm_med }
+        format.html { redirect_to cosm_meds_path, notice: "تمت الاضافة بنجاح!" }
+        format.json { render :index, status: :created, location: @cosm_med }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @cosm_med.errors, status: :unprocessable_entity }

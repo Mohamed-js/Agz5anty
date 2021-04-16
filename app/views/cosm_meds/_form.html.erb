@@ -1,52 +1,54 @@
 <%= form_with(model: cosm_med) do |form| %>
-  <% if cosm_med.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cosm_med.errors.count, "error") %> prohibited this cosm_med from being saved:</h2>
+<% if cosm_med.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(cosm_med.errors.count, "error") %> prohibited this cosm_med from being saved:</h2>
 
-      <ul>
+    <ul>
         <% cosm_med.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <li><%= error.full_message %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cosm_cat_id %>
-    <%= form.text_field :cosm_cat_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :discount %>
-    <%= form.number_field :discount %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    </ul>
+</div>
 <% end %>
+<br>
+<div class="field form-gruop">
+    <%= form.label 'اسم المستحضر' %>
+    <%= form.text_field :name, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label 'السعر' %>
+    <%= form.text_field :price, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label 'الاسم بالعربي' %>
+    <%= form.text_area :description, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label "القسم" %>
+    <%= select_tag "cosm_med[#{:cosm_cat_id}]", options_from_collection_for_select(@cosm_cats, "id", "name", cosm_med.cosm_cat_id), class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label 'الصورة' %>
+    <%= form.file_field :image, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label "الكمية المتاحة" %>
+    <%= form.number_field :quantity, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.label 'الخصم' %>
+    <%= form.number_field :discount, class:"form-control" %>
+</div>
+<br>
+<div class="field form-gruop">
+    <%= form.submit 'اضافة المستحضر ناااو', class:"btn btn-success" %>
+</div>
+<% end %>
+
+<br><br><br><br>

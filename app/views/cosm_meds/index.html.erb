@@ -1,35 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cosm Meds</h1>
+<h1 class="m-3">مستحضرات التجميل</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Main</th>
-      <th>Img</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br><br>
+<%= link_to 'اضافة جديد', new_cosm_med_path, class:"btn-success btn m-3" %>
+<br><br>
+<table class="table table-striped m-2" style="font-size:15px;">
+    <thead>
+        <tr>
+            <th>الاسم</th>
+            <th>الاسم بالعربي</th>
+            <th>السعر</th>
+            <th>القسم</th>
+            <th>الصورة</th>
+            <th>الكمية</th>
+            <th>الخصم</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @cosm_meds.each do |cosm_med| %>
-      <tr>
-        <td><%= cosm_med.name %></td>
-        <td><%= cosm_med.description %></td>
-        <td><%= cosm_med.main %></td>
-        <td><%= image_tag cosm_med.image_url if cosm_med.image %></td>
-        <td><%= cosm_med.quantity %></td>
-        <td><%= link_to 'Show', cosm_med %></td>
-        <td><%= link_to 'Edit', edit_cosm_med_path(cosm_med) %></td>
-        <td><%= link_to 'Destroy', cosm_med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% @cosm_meds.each do |cosm_med| %>
+        <tr>
+            <td><%= cosm_med.name %></td>
+            <td><%= cosm_med.description %></td>
+            <td><%= cosm_med.price %></td>
+            <td><%= cosm_med.cosm_cat.name %></td>
+            <td><%= image_tag cosm_med.image_url, style:"height:50px;" if cosm_med.image %></td>
+            <td><%= cosm_med.quantity %></td>
+            <td><%= cosm_med.discount %></td>
+            <td><%= link_to 'عرض', cosm_med, class:"btn btn-secondary" %></td>
+            <td><%= link_to 'تعديل', edit_cosm_med_path(cosm_med), class:"btn btn-warning" %></td>
+            <td><%= link_to 'حذف', cosm_med, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Cosm Med', new_cosm_med_path %>
+<br><br><br><br>
