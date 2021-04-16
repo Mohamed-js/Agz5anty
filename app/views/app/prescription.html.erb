@@ -3,31 +3,36 @@
 
 <div class="field ar">
     <%= form.label "صورة الروشتة" %>
-    <%= form.file_field :image, class:"form-control" %>
+    <%= form.file_field :image, class:"form-control", required:true %>
 </div>
 
 <div class="field ar">
     <%= form.label "المدينة" %>
-    <%= form.select :city, options_for_select(["كفر الدوار"]), class:"form-control" %>
+    <%= form.select :city, options_for_select(["كفر الدوار"]), class:"form-control", required:true %>
 </div>
 
 <div class="field ar">
     <%= form.label "المكان" %>
-    <%= form.select :center, options_for_select(["الحدائق","سيدي شحاتة","التمليك", "السناهرة", "مدخل كفر الدوار", "كفر الدوار", "شارع المحكمة"]), class:"form-control" %>
+    <%= form.select :center, options_for_select(["الحدائق","سيدي شحاتة","التمليك", "السناهرة", "مدخل كفر الدوار", "كفر الدوار", "شارع المحكمة"]), class:"form-control", required:true %>
 </div>
 
 <div class="field ar">
     <%= form.label "العنوان بالتفصيل" %>
-    <%= form.text_field :address, class:"form-control" %>
+    <%= form.text_field :address, class:"form-control", required:true %>
 </div>
 
 <div class="field ar">
     <%= form.label "المحمول" %>
+    <%= form.text_field :phone, class:"form-control", required:true, minlength:11 %>
+</div>
+
+<div class="field ar">
+    <%= form.label "رقم هاتف احتياطي (اختياري)" %>
     <%= form.text_field :phone, class:"form-control" %>
 </div>
 
 <div class="field ar">
-    <%= form.label "ملاحظات" %>
+    <%= form.label "ملاحظات (اختياري)" %>
 </div>
 
 <div class="field ar">

@@ -1,28 +1,28 @@
 <br><br>
 <div class="max-width2 m-auto p-4">
-<h2 class="text-center" style= "font-weight:500;" >Log in</h2>
-<br>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"form-control my-4"%>
-  </div>
-
-  <div class="field form-label">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder:"********", class:"form-control my-4" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field form-label">
-      <%= f.check_box :remember_me %>
-      <span style= "font-weight:500;">Remember me</span>
+    <h2 class="text-center" style="font-weight:500;">تسجيل الدخول</h2>
+    <br>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"البريد الالكتروني", class:"form-control my-4"%>
     </div>
-  <% end %>
 
-  <div class="actions ">
-    <%= f.submit "Log in", class: "btn btn-primary my-3" %>
-  </div>
-<% end %>
+    <div class="field form-label">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder:"********", class:"form-control my-4" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <% if devise_mapping.rememberable? %>
+    <div class="field form-label d-none">
+        <%= f.check_box :remember_me, checked:true %>
+        <span style="font-weight:500;">Remember me</span>
+    </div>
+    <% end %>
+
+    <div class="actions ">
+        <%= f.submit "تسجيل الدخول", class: "btn btn-primary my-3" %>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
 
 </div>

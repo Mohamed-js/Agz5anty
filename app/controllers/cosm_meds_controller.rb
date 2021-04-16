@@ -1,6 +1,7 @@
 class CosmMedsController < ApplicationController
   before_action :set_cosm_med, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_admin!, except: [:show]
+  
   # GET /cosm_meds or /cosm_meds.json
   def index
     @cosm_meds = CosmMed.all

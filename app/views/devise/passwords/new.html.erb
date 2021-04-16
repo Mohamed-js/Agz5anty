@@ -1,16 +1,20 @@
-<h2>Forgot your password?</h2>
+<br><br>
+<div class="m-auto max-width2">
+    <h2>نسيت كلمة السر؟!</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+        <%= f.label 'ادخل البريد الالكتروني الذي قمت بالتسجيل فيه ب موقعنا' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control my-2" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <div class="actions">
+        <%= f.submit "أرسل لي تعليمات اعادة تعيين كلمة السر", class:'btn btn-primary my-3' %>
+    </div>
+    <br><br>
+    <%= render "devise/shared/links" %>
+    <% end %>
 
-<%= render "devise/shared/links" %>
+</div>

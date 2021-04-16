@@ -1,5 +1,6 @@
 class CosmCatsController < ApplicationController
   before_action :set_cosm_cat, only: %i[ edit update destroy ]
+  before_action :authenticate_admin!, except: [:show]
 
   # GET /cosm_cats or /cosm_cats.json
   def index

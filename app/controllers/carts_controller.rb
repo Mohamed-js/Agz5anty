@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_admin!, only: [:new]
+  # before_action :authenticate_admin!, except: [:index, :edit, :destroy]
+  
   # GET /carts or /carts.json
   def index
     @carts = Cart.where(user_id: current_user.id)

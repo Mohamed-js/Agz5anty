@@ -1,31 +1,33 @@
 <br><br>
 <div class="m-auto max-width2">
-<h2 class="text-center" >Sign up</h2>
-<br>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <h2 class="text-center">تسجيل عضوية جديدة</h2>
+    <br>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field form-label m-4">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Fullname", class:"form-control my-2"  %>
-  </div>
+    <div class="field form-label m-4">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"الاسم الكامل", class:"form-control my-2"  %>
+    </div>
 
-  <div class="field form-label m-4">
-    <%= f.email_field :email, autocomplete: "email", placeholder:"Email", class:"form-control my-2"%>
-  </div>
+    <div class="field form-label m-4">
+        <%= f.email_field :email, autocomplete: "email", placeholder:"البريد الالكتروني", class:"form-control my-2"%>
+    </div>
 
-  <div class="field form-label m-4">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password", class:"form-control my-2"  %>
-  </div>
+    <div class="field form-label m-4">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder:"كلمة السر", class:"form-control my-2"  %>
+    </div>
 
-  <div class="field form-label m-4">
+    <div class="field form-label m-4">
 
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password", class:"form-control my-2"  %>
-  </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"تأكيد كلمةالسر", class:"form-control my-2"  %>
+    </div>
 
-  <div class="actions m-4">
-    <%= f.submit "Sign up", class: "btn btn-primary my-3" %>
-  </div>
-<% end %>
+    <div class="actions m-4">
+        <%= f.submit "سجل عضوية جديدة", class: "btn btn-primary my-3" %>
+    </div>
+    <div class="actions m-4">
+        <%= render "devise/shared/links" %>
+        <% end %>
+    </div>
 
-<%= render "devise/shared/links" %>
 </div>

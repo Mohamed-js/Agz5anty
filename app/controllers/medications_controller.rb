@@ -1,6 +1,7 @@
 class MedicationsController < ApplicationController
   before_action :set_medication, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_admin!, except: [:show]
+  
   # GET /medications or /medications.json
   def index
     @medications = Medication.all
