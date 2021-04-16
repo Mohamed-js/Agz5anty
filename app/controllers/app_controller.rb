@@ -17,11 +17,12 @@ class AppController < ApplicationController
         center = params[:center]
         address = params[:address]
         phone = params[:phone]
+        phone2 = params[:phone2]
         notes = params[:notes]
         usr = params[:user_id]
         img = params[:image]
 
-        ord = Order.new(user_id: usr, phone: phone, city: city, center: center, address: address, notes: notes, image: img)
+        ord = Order.new(user_id: usr, phone: phone, phone2: phone2, city: city, center: center, address: address, notes: notes, image: img)
         if ord.save
             redirect_to root_path, notice: "تم الطلب بنجاح. شكرا لتعاملكم معنا."
         end
@@ -39,6 +40,7 @@ class AppController < ApplicationController
         center = params[:center]
         address = params[:address]
         phone = params[:phone]
+        phone2 = params[:phone2]
         code = @carts[0].id
 
         @carts.each do |cart|
@@ -48,7 +50,7 @@ class AppController < ApplicationController
                 item = CosmMed.find(cart.item)
             end
             tprice = cart.quantity * item.price
-            ord = Order.new(item: item.name, quantity: cart.quantity ,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code, notes: params[:notes])
+            ord = Order.new(item: item.name, quantity: cart.quantity, phone2: phone2,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code, notes: params[:notes])
             if ord.save 
                 cart.delete
             end
