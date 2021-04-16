@@ -12,21 +12,21 @@
 <% end %>
 
 <div class="field form-gruop">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label 'الاسم' %>
+    <%= form.text_field :name, class:"form-control" %>
 </div>
 
 <div class="field form-gruop">
     <%= form.label :parent %>
-    <%= form.text_field :parent %>
+    <%= form.select :parent, options_for_select(['skin', 'hair', 'women','men','beauty','sexual','babies']), class:"form-control" %>
 </div>
 
 <div class="field form-gruop">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label 'الصورة' %>
+    <%= form.file_field :image, class:"form-control" %>
 </div>
 
 <div class="field form-gruop">
-    <%= form.submit %>
+    <%= form.submit 'اضافة قسم', class:'btn btn-success m-2' %>
 </div>
 <% end %>
