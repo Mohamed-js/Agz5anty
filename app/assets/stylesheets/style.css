@@ -51,6 +51,10 @@ body > nav.navbar.navbar-light.sticky-top.bg-light > ul > li > a {
   padding-right: 0.3125rem !important;
 }
 
+.max {
+  max-width: 90%;
+}
+
 .choice {
   padding-top: 10px;
   padding-bottom: 10px;
