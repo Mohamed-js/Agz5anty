@@ -43,7 +43,7 @@ class CosmMedsController < ApplicationController
   def update
     respond_to do |format|
       if @cosm_med.update(cosm_med_params)
-        format.html { redirect_to @cosm_med, notice: "Cosm med was successfully updated." }
+        format.html { redirect_to @cosm_med, notice: "تم حذف المنتج بنجاح!" }
         format.json { render :show, status: :ok, location: @cosm_med }
       else
         format.html { render :edit, status: :unprocessable_entity }
