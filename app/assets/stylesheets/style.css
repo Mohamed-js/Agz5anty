@@ -271,6 +271,12 @@ h3.cat-name {
   color: white;
 }
 
+.card-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .catty {
   position: relative;
   width: 130px;
@@ -636,8 +642,8 @@ footer h3 {
     object-fit: cover;
   }
 
-  .product-info h6 {
-    margin: 3px;
+  .card-text h6 {
+    margin-bottom: 5px;
   }
 
   .product-info span,
