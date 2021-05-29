@@ -1,6 +1,6 @@
 # PHARMACY APP
 
-This project is a pharmacy delivery application that allows users get medications and cosmetics from the pharmacy. It's built mainly with RubyOnRails.
+This project is a pharmacy delivery application that allows users get medications and cosmetics from the pharmacy. It's built mainly with Ruby on Rails.
 
 <div align="center">
 
