@@ -19,4 +19,14 @@ Rails.application.routes.draw do
 
   get "/search", to:"search#index"
   post "/search", to:"search#index"
+
+
+  namespace :api do
+    namespace :v1 do
+      resources :categories, only: [:index, :show]
+      resources :medications, only: [:show]
+      resources :cosmetics_categories, only: [:index, :show]
+      resources :cosmetics, only: [:show]
+    end
+  end
 end
