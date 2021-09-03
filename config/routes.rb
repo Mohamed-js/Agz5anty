@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      devise_for :users, controllers: { registrations: 'registrations' }
+      devise_for :users, controllers: { registrations: 'api/v1/registrations' }
       resources :categories, only: [:index, :show]
       resources :medications, only: [:show]
       resources :cosmetics_categories, only: [:index, :show]
