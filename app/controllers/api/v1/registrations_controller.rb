@@ -2,7 +2,9 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
     protect_from_forgery with: :null_session
 
     def create
-        user = User.new(sign_up_params)
+        user = User.new(email: params[:email], password: params[:password])
+        user.phone = params[:phone]
+
         if user.save
           render json: { token: user.encrypted_password}, status: :ok
         else
