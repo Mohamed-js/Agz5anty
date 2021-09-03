@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :cosm_meds
-  resources :cosm_cats  
+  resources :cosm_cats
   resources :orders
   resources :categories
   root "app#index"
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      devise_for :users, controllers: { registrations: 'registrations' }
       resources :categories, only: [:index, :show]
       resources :medications, only: [:show]
       resources :cosmetics_categories, only: [:index, :show]
