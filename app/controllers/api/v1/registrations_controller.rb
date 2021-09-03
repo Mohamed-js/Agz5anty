@@ -6,7 +6,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
         if user.save
           render json: { token: user.encrypted_password}, status: :ok
         else
-          render json: user.errors.full_messages
+          render json: { errors: user.errors.full_messages }
         end
     end
 
