@@ -3,7 +3,7 @@ class Api::V1::SessionsController < Devise::SessionsController
   skip_before_action :verify_authenticity_token  
 
   def create
-    user = User.find_by_email(configure_sign_in_params[:email])
+    user = User.find_by_email(configure_sign_in_params[:email].downcase)
     if user.valid_password?(configure_sign_in_params[:password])
       render json: { token: user.encrypted_password}, status: :ok
     else
