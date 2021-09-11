@@ -36,7 +36,7 @@
                 <%= form.number_field :quantity, class:"form-control mx-3", value:1, min:1 %>
                 <button type="button" class="add btn btn-success"> <i class="fa fa-plus color-white"></i></button>
             </div>
-            <%= form.hidden_field :item, value: @medication.id %>
+            <%= form.hidden_field :item_id, value: @medication.id %>
             <div class="actions w-100">
                 <%= form.submit "اضافة", class:"btn btn-success my-1 w-100"%>
                 <button type="button" class="btn btn-secondary my-1 w-100 close-mod">اغلاق</button>

@@ -1,4 +1,4 @@
-class Api::V1::CosmeticsCategoriesController < ApplicationController
+class Api::V1::CosmeticsCategoriesController < Api::V1::VersionOneController
     before_action :set_cosmetic, only: %i[ show ]
 
     # GET cosmetics_categories?id=skin   => the id here for the category's parent "string"

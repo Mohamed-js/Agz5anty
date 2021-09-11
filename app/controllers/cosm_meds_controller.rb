@@ -9,7 +9,7 @@ class CosmMedsController < ApplicationController
 
   # GET /cosm_meds/1 or /cosm_meds/1.json
   def show
-    @cart = Cart.new
+    @cart = CartItem.new
     @medication = CosmMed.find(params[:id])
   end
 

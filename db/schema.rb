@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_191935) do
+ActiveRecord::Schema.define(version: 2021_09_11_153648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,19 +43,33 @@ ActiveRecord::Schema.define(version: 2021_09_03_191935) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.string "item"
-    t.integer "quantity"
-    t.decimal "price"
+  create_table "addresses", force: :cascade do |t|
+    t.text "datails"
     t.integer "user_id"
+    t.string "geocode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "ordered"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "user_id"
+    t.string "item_type"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "government_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -81,6 +95,12 @@ ActiveRecord::Schema.define(version: 2021_09_03_191935) do
     t.string "brand"
   end
 
+  create_table "governments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "medications", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -98,22 +118,37 @@ ActiveRecord::Schema.define(version: 2021_09_03_191935) do
     t.integer "category_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "item"
-    t.integer "quantity"
-    t.integer "tprice"
+  create_table "order_items", force: :cascade do |t|
+    t.integer "item_id"
     t.integer "user_id"
-    t.string "phone"
-    t.string "city"
-    t.string "center"
-    t.text "address"
-    t.text "image_data"
+    t.string "item_type"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "code"
-    t.boolean "done"
-    t.text "notes"
+    t.integer "order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "phone"
     t.string "phone2"
+    t.text "address_id"
+    t.text "notes"
+    t.string "status", default: "pending"
+    t.string "geocode"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "name"
+    t.string "geocode"
+    t.text "address"
+    t.string "doctor"
+    t.string "phone"
+    t.string "landline"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

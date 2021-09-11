@@ -1,4 +1,4 @@
-class Api::V1::CategoriesController < ApplicationController
+class Api::V1::CategoriesController < Api::V1::VersionOneController
     before_action :set_category, only: %i[ show ]
     # GET Categories/
     def index

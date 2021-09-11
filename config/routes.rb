@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "/sold/:id", to:"orders#sell"
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :medications
-  resources :carts
+  resources :cart_items
   get "/cosm_cats/cat/:name", to: "cosm_cats#cats"
 
   get "/search", to:"search#index"
@@ -28,6 +28,9 @@ Rails.application.routes.draw do
       resources :medications, only: [:show]
       resources :cosmetics_categories, only: [:index, :show]
       resources :cosmetics, only: [:show]
+      resources :cart_items, only: [:index, :create, :update, :destroy]
+      resources :order_items, only: [:index]
+      resources :orders, only: [:index, :show, :create]
     end
   end
 end

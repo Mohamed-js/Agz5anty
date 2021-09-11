@@ -10,7 +10,7 @@ class MedicationsController < ApplicationController
 
   # GET /medications/1 or /medications/1.json
   def show
-    @cart = Cart.new
+    @cart_item = CartItem.new
   end
 
   # GET /medications/new

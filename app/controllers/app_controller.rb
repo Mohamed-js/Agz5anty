@@ -35,26 +35,30 @@ class AppController < ApplicationController
     end
 
     def new_order
-        @carts = Cart.where(user_id: current_user.id)
-        city = params[:city]
-        center = params[:center]
-        address = params[:address]
-        phone = params[:phone]
-        phone2 = params[:phone2]
-        code = @carts[0].id
+        @cart_items = CartItem.where(user_id: current_user.id)
 
-        @carts.each do |cart|
-            if cart.ordered == "true"
-                item = Medication.find(cart.item)
-            elsif cart.ordered == "false"
-                item = CosmMed.find(cart.item)
+        @order = Order.create(
+            phone: params[:phone],
+            phone2: params[:phone2],
+            address_id: params[:address_id],
+            notes: params[:notes],
+            geocode: params[:geocode],
+            user_id: current_user.id
+        )
+
+        @cart_items.each do |cart_item|
+            if cart_item.item_type == "medications"
+                item = Medication.find(cart_item.item_id)
+            elsif cart_item.item_type == "cosmetics"
+                item = CosmMed.find(cart_item.item_id)
             end
-            tprice = cart.quantity * item.price
-            ord = Order.new(item: item.name, quantity: cart.quantity, phone2: phone2,tprice: tprice, user_id: current_user.id, phone: phone, city: city, center: center, address: address, code: code, notes: params[:notes])
+            ord = @order.order_items.build(item_id: item.id, item_type: cart_item.item_type, quantity: cart_item.quantity,  user_id: current_user.id)
+
             if ord.save 
-                cart.delete
+                cart_item.delete
             end
         end
-        redirect_to carts_path, notice: "تم الطلب بنجاح. شكرا لتعاملكم معنا."
+        @order.save
+        redirect_to cart_items_path, notice: "تم الطلب بنجاح. شكرا لتعاملكم معنا."
     end
 end

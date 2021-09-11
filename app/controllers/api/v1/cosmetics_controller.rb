@@ -1,4 +1,4 @@
-class Api::V1::CosmeticsController < ApplicationController
+class Api::V1::CosmeticsController < Api::V1::VersionOneController
     before_action :set_cosmetic, only: %i[ show ]
 
     # GET cosmetics/1

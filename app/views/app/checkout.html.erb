@@ -2,17 +2,12 @@
 
 <div class="field ar">
     <%= form.label "المدينة" %>
-    <%= form.select :city, options_for_select(["كفر الدوار"]), class:"form-control", required:true %>
+    <%= form.select :address_id, options_for_select([1]), class:"form-control", required:true %>
 </div>
 
 <div class="field ar">
-    <%= form.label "المكان" %>
-    <%= form.select :center, options_for_select(["الحدائق","سيدي شحاتة","التمليك", "السناهرة", "مدخل كفر الدوار", "كفر الدوار", "شارع المحكمة"]), class:"form-control", required:true %>
-</div>
-
-<div class="field ar">
-    <%= form.label "العنوان بالتفصيل" %>
-    <%= form.text_field :address, class:"form-control", required:true %>
+    <%= form.label "الموقع" %>
+    <%= form.text_field :geocode, value: "31.14371,30.12427", class:"form-control", required:true %>
 </div>
 
 <div class="field ar">

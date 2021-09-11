@@ -5,5 +5,5 @@
  <a class="navbar-brand" id="menu"><i class="fas fa-bars"></i></a> 
 <%
 =end%>
-    <a class="navbar-brand text-green m-0"  href="/carts"><i class="fas fa-shopping-cart btn-green position-relative"> <%if user_signed_in?%> <span class="cart-count"><%= current_user.carts.count %></span><%end%></i></a>
+    <a class="navbar-brand text-green m-0"  href="/cart_items"><i class="fas fa-shopping-cart btn-green position-relative"> <%if user_signed_in?%> <span class="cart-count"><%= current_user.cart_items.count %></span><%end%></i></a>
 </nav>

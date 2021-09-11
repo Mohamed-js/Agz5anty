@@ -1,4 +1,4 @@
-class Api::V1::MedicationsController < ApplicationController
+class Api::V1::MedicationsController < Api::V1::VersionOneController
     before_action :set_medication, only: %i[ show ]
 
     # GET medications/1
