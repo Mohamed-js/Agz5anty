@@ -1,5 +1,5 @@
 class Api::V1::CartItemsController < Api::V1::VersionOneController
-    before_action :authenticated_user?, except: :index
+    before_action :authenticated_user?
     before_action :set_cart_item, only: [:update]
 
     # List all cart items
