@@ -4,7 +4,9 @@ class Api::V1::CartItemsController < Api::V1::VersionOneController
 
     # List all cart items
     def index
-        render json: @user.cart_items
+        cosmetics = @user.cart_items.where(item_type: "cosmetics")
+        medications = @user.cart_items.where(item_type: "medications")
+        render json: {medications: medications, cosmetics: cosmetics}
     end
 
     # Create cart item
