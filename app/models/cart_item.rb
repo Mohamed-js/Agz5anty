@@ -2,9 +2,9 @@ class CartItem < ApplicationRecord
     belongs_to :user
 
     def self.give_all(user_id)
-        cosmetics = CartItem.where(item_type: "cosmetics", user_id: user_id)
-        medications = CartItem.where(item_type: "medications", user_id: user_id)
-        medications + cosmetics
+        cosmetics = CartItem.where(item_type: "cosmetics", user_id: user_id).order('created_at DESC')
+        medications = CartItem.where(item_type: "medications", user_id: user_id).order('created_at DESC')
+        (medications + cosmetics)
     end
 
     def self.give_all_with_items(user_id)
