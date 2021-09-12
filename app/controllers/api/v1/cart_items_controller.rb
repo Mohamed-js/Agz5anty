@@ -11,7 +11,7 @@ class Api::V1::CartItemsController < Api::V1::VersionOneController
     def create
         @cart_item = @user.cart_items.build(item_id: params[:item_id], item_type: params[:item_type], quantity: params[:quantity])
         if @cart_item.save
-            render json: {message: "Added successfully!"}
+            render json: {message: @cart_item.id}
         else
             render json: {error: @cart_item.errors.full_messages}
         end
