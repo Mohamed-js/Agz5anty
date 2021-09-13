@@ -8,7 +8,7 @@ class Api::V1::CosmeticsCategoriesController < Api::V1::VersionOneController
 
     #GET cosmetics_categories/2   => the id here for the category
     def show
-        render json: @cosmetic.cosm_meds
+        render json: @cosmetic.cosm_meds.order('name DESC').offset(params[:offset]).limit(15)
     end
 
     private

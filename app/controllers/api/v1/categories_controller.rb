@@ -7,7 +7,7 @@ class Api::V1::CategoriesController < Api::V1::VersionOneController
 
     # GET Categories/1
     def show
-        render json: @category.medications
+        render json: @category.medications.order('name DESC').offset(params[:offset]).limit(15)
     end
 
     private
