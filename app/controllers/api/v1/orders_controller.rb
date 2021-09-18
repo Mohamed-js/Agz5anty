@@ -14,14 +14,17 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
 
     # Create new order
     def create
+        payment_method = params[:payment_method] === 1 ? "cod" : 'visa' 
+        payment_status = 'unpaid'
         cart_items = @user.cart_items
         if cart_items.count > 0
             @order = Order.create(
-                phone: params[:phone],
-                phone2: params[:phone2],
+                phone: @user.phone,
+                phone2: params[:phone],
                 address_id: params[:address_id],
                 notes: params[:notes],
-                geocode: params[:geocode],
+                payment_method: payment_method,
+                payment_status: payment_status,
                 user_id: @user.id
             )
             cart_items.each do |cart_item|
