@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_153648) do
+ActiveRecord::Schema.define(version: 2021_09_18_102701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_153648) do
   end
 
   create_table "addresses", force: :cascade do |t|
-    t.text "datails"
+    t.text "details"
     t.integer "user_id"
     t.string "geocode"
     t.datetime "created_at", precision: 6, null: false
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_153648) do
   create_table "orders", force: :cascade do |t|
     t.string "phone"
     t.string "phone2"
-    t.text "address_id"
+    t.integer "address_id"
     t.text "notes"
     t.string "status", default: "pending"
     t.string "geocode"

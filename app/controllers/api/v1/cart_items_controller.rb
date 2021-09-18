@@ -7,6 +7,11 @@ class Api::V1::CartItemsController < Api::V1::VersionOneController
         render json: CartItem.give_all_with_items(@user.id)
     end
 
+    # Cart items count
+    def show
+        render json: @user.cart_items.count
+    end
+
     # Create cart item
     def create
         @cart_item = @user.cart_items.build(item_id: params[:item_id], item_type: params[:item_type], quantity: params[:quantity])
