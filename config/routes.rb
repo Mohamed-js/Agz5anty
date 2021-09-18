@@ -28,10 +28,11 @@ Rails.application.routes.draw do
       resources :medications, only: [:show]
       resources :cosmetics_categories, only: [:index, :show]
       resources :cosmetics, only: [:show]
-      resources :cart_items, only: [:index, :create, :update, :destroy]
+      resources :cart_items, only: [:index, :show, :create, :update, :destroy]
       resources :order_items, only: [:index]
       resources :orders, only: [:index, :show, :create]
       resources :search, only: [:index]
+      resources :addresses, only: [:index :create, :destory]
     end
   end
 end
