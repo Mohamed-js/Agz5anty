@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       resources :order_items, only: [:index]
       resources :orders, only: [:index, :show, :create]
       resources :search, only: [:index]
-      resources :addresses, only: [:index :create, :destory]
+      resources :addresses, only: [:index, :create, :destory]
     end
   end
 end
