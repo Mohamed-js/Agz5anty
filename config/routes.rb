@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get "/search", to:"search#index"
   post "/search", to:"search#index"
 
-
   namespace :api do
     namespace :v1 do
       mount ActionCable.server => '/cable'

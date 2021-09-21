@@ -1,8 +1,9 @@
 class Order < ApplicationRecord
     belongs_to :user
     has_many :order_items
+    has_many :addresses, through: :user
 
-    after_create_commit do
-        OrderCreationEventBroadcastJob.perform_later(self)
+    def address
+        Address.find(address_id)
     end
 end

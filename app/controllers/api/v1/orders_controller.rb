@@ -31,7 +31,10 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
                 OrderItem.create(item_id: cart_item.item_id, user_id: cart_item.user_id, item_type: cart_item.item_type, quantity: cart_item.quantity, order_id: @order.id)
                 cart_item.delete
             end
-            render json: {message: "Placed the order successfully!"}
+            serialized = ActiveModelSerializers::Adapter::Json.new(
+                OrderSerializer.new(@order)
+            ).serializable_hash
+            ActionCable.server.broadcast('orders_channel', serialized)
         else
             render json: {error: "Nothing in the cart!"}
         end

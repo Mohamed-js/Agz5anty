@@ -22,7 +22,9 @@ gem 'shrine', '~> 3.3'
 gem 'shrine-cloudinary', '~> 1.1'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+
+gem 'active_model_serializers', '~> 0.10.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
