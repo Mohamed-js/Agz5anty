@@ -4,7 +4,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
 
   # List of all orders
   def index
-    render json: @user.orders, include: :order_items
+    render json: @user.orders.ordered_id, include: :order_items
   end
 
   # One order
@@ -36,7 +36,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
         OrderSerializer.new(@order)
       ).serializable_hash
 
-      ActionCable.server.broadcast('orders_channel', serialized)
+      ActionCable.server.broadcast("orders_channel", serialized)
     else
       render json: { error: 'Nothing in the cart!' }
     end
