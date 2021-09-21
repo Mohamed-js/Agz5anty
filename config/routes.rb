@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      mount ActionCable.server => '/cable'
       devise_for :users, controllers: { registrations: 'api/v1/registrations' }
       resources :categories, only: [:index, :show]
       resources :medications, only: [:show]

@@ -17,7 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-
+gem 'rack-cors'
 gem 'shrine', '~> 3.3'
 gem 'shrine-cloudinary', '~> 1.1'
 
