@@ -1,3 +1,3 @@
 class City < ApplicationRecord
-    belongs_to :government
+  belongs_to :government
 end

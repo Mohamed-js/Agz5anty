@@ -1,9 +1,5 @@
 class Order < ApplicationRecord
-    belongs_to :user
-    has_many :order_items
-    has_many :addresses, through: :user
-
-    def address
-        Address.find(address_id)
-    end
+  belongs_to :user
+  has_many :order_items
+  belongs_to :address
 end

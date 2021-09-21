@@ -1,5 +1,5 @@
 class CosmCatsController < ApplicationController
-  before_action :set_cosm_cat, only: %i[ edit update destroy ]
+  before_action :set_cosm_cat, only: %i[edit update destroy]
   before_action :authenticate_admin!, except: [:show]
 
   # GET /cosm_cats or /cosm_cats.json
@@ -23,8 +23,7 @@ class CosmCatsController < ApplicationController
   end
 
   # GET /cosm_cats/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /cosm_cats or /cosm_cats.json
   def create
@@ -32,7 +31,7 @@ class CosmCatsController < ApplicationController
 
     respond_to do |format|
       if @cosm_cat.save
-        format.html { redirect_to @cosm_cat, notice: "Cosm cat was successfully created." }
+        format.html { redirect_to @cosm_cat, notice: 'Cosm cat was successfully created.' }
         format.json { render :show, status: :created, location: @cosm_cat }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +44,7 @@ class CosmCatsController < ApplicationController
   def update
     respond_to do |format|
       if @cosm_cat.update(cosm_cat_params)
-        format.html { redirect_to @cosm_cat, notice: "Cosm cat was successfully updated." }
+        format.html { redirect_to @cosm_cat, notice: 'Cosm cat was successfully updated.' }
         format.json { render :show, status: :ok, location: @cosm_cat }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,19 +57,20 @@ class CosmCatsController < ApplicationController
   def destroy
     @cosm_cat.destroy
     respond_to do |format|
-      format.html { redirect_to cosm_cats_url, notice: "Cosm cat was successfully destroyed." }
+      format.html { redirect_to cosm_cats_url, notice: 'Cosm cat was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cosm_cat
-      @cosm_cat = CosmCat.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def cosm_cat_params
-      params.require(:cosm_cat).permit(:name, :image, :parent)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cosm_cat
+    @cosm_cat = CosmCat.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def cosm_cat_params
+    params.require(:cosm_cat).permit(:name, :image, :parent)
+  end
 end
