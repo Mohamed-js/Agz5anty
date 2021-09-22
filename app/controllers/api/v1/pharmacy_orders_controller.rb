@@ -3,7 +3,7 @@ class Api::V1::PharmacyOrdersController < Api::V1::VersionOneController
 
   # List of all orders
   def index
-    render json: @user.orders, include: :order_items
+    render json: @pharmacy.pending_orders
   end
 
   private
