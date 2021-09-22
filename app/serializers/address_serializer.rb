@@ -1,4 +1,4 @@
 class AddressSerializer < ActiveModel::Serializer
   belongs_to :user
-  attributes :id, :details, :geocode
+  attributes :id, :details, :longitude, :latitude
 end
