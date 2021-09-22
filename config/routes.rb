@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   resources :cosm_meds
   resources :cosm_cats
   resources :orders
@@ -22,7 +23,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      mount ActionCable.server => '/cable'
       devise_for :users, controllers: { registrations: 'api/v1/registrations' }
       resources :categories, only: %i[index show]
       resources :medications, only: [:show]
@@ -36,3 +36,7 @@ Rails.application.routes.draw do
     end
   end
 end
+
+
+# <Thread:0x000055cc76f470c0 /app/vendor/bundle/ruby/2.7.0/gems/actioncable-6.1.4.1/lib/action_cable/subscription_adapter/redis.rb:150 run> terminated with exception (report_on_exception is true):
+#  2021-09-22T08:00:50.467221+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/redis-4.4.0/lib/redis/client.rb:384:in `rescue in establish_connection': Error connecting to Redis on localhost:6379 (Errno::ECONNREFUSED) (Redis::CannotConnectError)
