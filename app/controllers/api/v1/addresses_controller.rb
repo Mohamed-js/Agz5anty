@@ -7,7 +7,7 @@ class Api::V1::AddressesController < Api::V1::VersionOneController
   end
 
   def create
-    @address = @user.addresses.build(details: params[:details], geocode: params[:geocode])
+    @address = @user.addresses.build(details: params[:details], latitude: params[:latitude], longitude: params[:longitude])
     if @address.save
       render json: { message: 'Saved.' }
     else
