@@ -25,7 +25,8 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
         notes: params[:notes],
         payment_method: payment_method,
         payment_status: payment_status,
-        user_id: @user.id
+        user_id: @user.id,
+        pharmacy_id: 1 #Default .. The center.
       )
       cart_items.each do |cart_item|
         OrderItem.create(item_id: cart_item.item_id, user_id: cart_item.user_id,
