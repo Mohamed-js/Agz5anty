@@ -37,7 +37,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
       address = @order.address
       pharmacies_around = Pharmacy.in_government(address.details.split(' - ').first).near([address.latitude, address.longitude])
 
-      pharmacies.each do |pharmacy|
+      pharmacies_around.each do |pharmacy|
         if pharmacy.opens_at && pharmacy.closes_at
           if @order.created_at.hour.between?(pharmacy.opens_at, pharmacy.closes_at)
             @order.pharmacy_id = pharmacy.id
