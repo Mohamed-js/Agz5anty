@@ -1,5 +1,5 @@
 class Api::V1::PharmacyOrdersController < Api::V1::VersionOneController
-  before_action :set_pharmacy  
+  before_action :set_pharmacy
 
   # List of all orders
   def index
@@ -7,6 +7,7 @@ class Api::V1::PharmacyOrdersController < Api::V1::VersionOneController
   end
 
   private
+
   def set_pharmacy
     @pharmacy = Pharmacy.find(params[:id])
   end

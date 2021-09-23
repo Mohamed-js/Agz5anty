@@ -2,22 +2,22 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootstrap'
 gem 'devise'
-gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
-gem 'puma', '~> 5.0'
-gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 5.0'
-gem 'turbolinks', '~> 5'
+gem 'geocoder'
+gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
+gem 'pg'
+gem 'puma', '~> 5.0'
 gem 'rack-cors'
+gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
+gem 'sass-rails', '>= 6'
 gem 'shrine', '~> 3.3'
 gem 'shrine-cloudinary', '~> 1.1'
-gem 'active_model_serializers', '~> 0.10.0'
-gem 'image_processing', '~> 1.2'
-gem 'bootstrap'
-gem 'bootsnap', '>= 1.4.4', require: false
-gem 'pg'
-gem 'geocoder'
+gem 'turbolinks', '~> 5'
+gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'dotenv-rails'
