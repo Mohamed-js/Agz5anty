@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :pharmacies
   mount ActionCable.server => '/cable'
   resources :cosm_meds
   resources :cosm_cats

@@ -26,7 +26,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
         payment_method: payment_method,
         payment_status: payment_status,
         user_id: @user.id,
-        pharmacy_id: 1 #Default .. The center.
+        pharmacy_id: 1 # Default .. The center.
       )
       cart_items.each do |cart_item|
         OrderItem.create(item_id: cart_item.item_id, user_id: cart_item.user_id,
@@ -36,12 +36,12 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
 
       # HANDLE THE ADDRESS AND LOCATION
       address = @order.address
-      pharmacies_around = Pharmacy.in_government(address.details.split(' - ').first).near([address.latitude,
-                                                                                           address.longitude])
+      pharmacies_around = Pharmacy.in_government(address.government).near([address.latitude,
+                                                                           address.longitude])
       if pharmacies_around && pharmacies_around[0]
         pharmacies_around.each do |pharmacy|
           next unless pharmacy.opens_at && pharmacy.closes_at && @order.created_at.hour.between?(pharmacy.opens_at,
-                                                                                                pharmacy.closes_at)
+                                                                                                 pharmacy.closes_at)
 
           @order.pharmacy_id = pharmacy.id
           @order.save
