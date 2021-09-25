@@ -11,7 +11,7 @@ class Pharmacy < ApplicationRecord
   end
 
   def self.in_government(government)
-    where("lower(government) = #{government.downcase} ")
+    where("lower(government) = ?", government.downcase.strip)
   end
 
   def pending_orders
