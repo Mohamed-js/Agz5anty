@@ -58,7 +58,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
       serialized = ActiveModelSerializers::Adapter::Json.new(
         OrderSerializer.new(@order)
       ).serializable_hash
-      ActionCable.server.broadcast('orders_channel', serialized)
+      ActionCable.server.broadcast("orders_channel_#{@order.pharmacy.authentication_token}", serialized)
 
       render json: { message: @message }
     else

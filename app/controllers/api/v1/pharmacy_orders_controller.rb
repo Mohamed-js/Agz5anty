@@ -9,6 +9,6 @@ class Api::V1::PharmacyOrdersController < Api::V1::VersionOneController
   private
 
   def set_pharmacy
-    @pharmacy = Pharmacy.find(params[:id])
+    @pharmacy = Pharmacy.find_by(authentication_token: params[:token])
   end
 end

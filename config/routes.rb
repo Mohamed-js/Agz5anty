@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       resources :search, only: [:index]
       resources :addresses, only: %i[index create destory]
       resources :pharmacy_orders, only: %i[index]
+      resources :pharmacy_sessions, only: %i[create]
     end
   end
 end
