@@ -17,6 +17,9 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
     payment_method = params[:payment_method] === 1 ? 'cod' : 'visa'
     payment_status = 'unpaid'
     cart_items = @user.cart_items
+    p '---------------USER------------------'
+    p @user
+    p '--------------------------------------'
     if cart_items.count > 0
       @order = Order.create(
         phone: @user.phone,
@@ -26,8 +29,12 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
         payment_method: payment_method,
         payment_status: payment_status,
         user_id: @user.id,
-        pharmacy_id: 4 # Default .. The center.
+        pharmacy_id: Pharmacy.first.id # Default .. The center.
       )
+      p '---------------Order------------------'
+      p @order.valid?
+      p @order.errors.full_messages
+      p '--------------------------------------'
       cart_items.each do |cart_item|
         OrderItem.create(item_id: cart_item.item_id, user_id: cart_item.user_id,
                          item_type: cart_item.item_type, quantity: cart_item.quantity, order_id: @order.id)
@@ -38,8 +45,11 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
       address = @order.address
       pharmacies_around = Pharmacy.in_government(address.government).near([address.latitude,
                                                                            address.longitude])
-      if pharmacies_around && pharmacies_around[0]
-        p @order
+      p '---------------Pharmacies------------------'
+      p pharmacies_around
+      p '--------------------------------------'
+
+      if pharmacies_around
         pharmacies_around.each do |pharmacy|
           next unless pharmacy.opens_at && pharmacy.closes_at && @order.created_at.hour.between?(pharmacy.opens_at,
                                                                                                  pharmacy.closes_at)
@@ -49,7 +59,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
           break
         end
 
-        if @order.pharmacy_id
+        if @order.pharmacy_id != Pharmacy.first.id
           @message = 'Order is being processed.'
         else
           @message = 'No pharmacies are available now to deliver your order, please wait until morning!'

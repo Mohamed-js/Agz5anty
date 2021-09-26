@@ -13,6 +13,7 @@ class Api::V1::PharmaciesController < Api::V1::VersionOneController
   end
 
   private
+
   def pharmacy_params
     params.require(:pharmacy).permit(:name, :password, :government, :city, :doctor, :phone, :landline, :latitude,
                                      :longitude, :opens_at, :closes_at)
