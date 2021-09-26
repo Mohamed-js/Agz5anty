@@ -66,6 +66,8 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
     else
       render json: { error: 'Nothing in the cart!' }
     end
+    # To later!
+    # Geocoder::Calculations.distance_between([0.3113535e2,0.3014266e2], [0.311435116e2,0.301093331e2])/1.609344
   end
 
   private
