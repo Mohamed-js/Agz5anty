@@ -1,6 +1,6 @@
 module Api
   module V1
-    class PharmacyOrdersController < Api::V1::VersionOneController
+    class PharmacyPendingOrdersController < Api::V1::VersionOneController
       before_action :set_pharmacy
 
       # List of all pending orders

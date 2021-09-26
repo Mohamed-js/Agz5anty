@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      # Specific to user
       devise_for :users, controllers: { registrations: 'api/v1/registrations' }
       resources :categories, only: %i[index show]
       resources :medications, only: %i[show]
@@ -31,14 +32,22 @@ Rails.application.routes.draw do
       resources :cosmetics, only: %i[show]
       resources :cart_items, only: %i[index show create update destroy]
       resources :order_items, only: %i[index]
-      resources :orders, only: %i[index show create]
+      resources :orders, only: %i[index create]
       resources :search, only: %i[index]
       resources :addresses, only: %i[index create destory]
       resources :pharmacy_sessions, only: %i[create]
-      resources :pharmacy_orders, only: %i[index]
+
+      # Specific to pharmacies
+      resources :pharmacy_pending_orders, only: %i[index]
       resources :pharmacy_finished_orders, only: %i[index create]
       resources :pharmacy_not_found_orders, only: %i[create]
       resources :pharmacy_fake_orders, only: %i[create]
+
+      # Specific to the owner
+      resources :pending_orders, only: %i[index]
+      resources :finished_orders, only: %i[index]
+      resources :fake_orders, only: %i[index]
+      resources :not_found_orders, only: %i[index]
     end
   end
 end

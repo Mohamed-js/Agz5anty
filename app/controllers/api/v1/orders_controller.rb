@@ -2,16 +2,10 @@ module Api
   module V1
     class OrdersController < Api::V1::VersionOneController
       before_action :authenticated_user?
-      before_action :set_order, only: :show
 
-      # List of all orders
+      # List of all User's orders
       def index
         render json: @user.orders, include: :order_items
-      end
-
-      # One order
-      def show
-        render json: @order, include: :order_items
       end
 
       # STEPS ------------------------------------------------------------------
@@ -76,12 +70,6 @@ module Api
           # To later!
           # Geocoder::Calculations.distance_between([0.3113535e2,0.3014266e2], [0.311435116e2,0.301093331e2])/1.609344
         end
-      end
-
-      private
-
-      def set_order
-        @order = @user.orders.find(params[:id])
       end
     end
   end
