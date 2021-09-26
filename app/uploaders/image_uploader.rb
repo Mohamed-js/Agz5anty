@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageUploader < Shrine
   Attacher.validate do
     validate_mime_type %w[image/jpg image/jpeg image/png image/webp]

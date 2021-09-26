@@ -26,16 +26,19 @@ Rails.application.routes.draw do
     namespace :v1 do
       devise_for :users, controllers: { registrations: 'api/v1/registrations' }
       resources :categories, only: %i[index show]
-      resources :medications, only: [:show]
+      resources :medications, only: %i[show]
       resources :cosmetics_categories, only: %i[index show]
-      resources :cosmetics, only: [:show]
+      resources :cosmetics, only: %i[show]
       resources :cart_items, only: %i[index show create update destroy]
-      resources :order_items, only: [:index]
+      resources :order_items, only: %i[index]
       resources :orders, only: %i[index show create]
-      resources :search, only: [:index]
+      resources :search, only: %i[index]
       resources :addresses, only: %i[index create destory]
-      resources :pharmacy_orders, only: %i[index]
       resources :pharmacy_sessions, only: %i[create]
+      resources :pharmacy_orders, only: %i[index]
+      resources :pharmacy_finished_orders, only: %i[index create]
+      resources :pharmacy_not_found_orders, only: %i[create]
+      resources :pharmacy_fake_orders, only: %i[create]
     end
   end
 end

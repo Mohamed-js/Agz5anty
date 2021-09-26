@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeOrder < ActiveRecord::Migration[6.1]
   def change
     change_column_default :orders, :status, 'pending'

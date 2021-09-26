@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCosmCats < ActiveRecord::Migration[6.1]
   def change
     create_table :cosm_cats do |t|

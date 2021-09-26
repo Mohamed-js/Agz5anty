@@ -17,4 +17,8 @@ class Pharmacy < ApplicationRecord
   def pending_orders
     orders.where(status: 'pending')
   end
+
+  def finished_orders
+    orders.where(status: 'finished')
+  end
 end

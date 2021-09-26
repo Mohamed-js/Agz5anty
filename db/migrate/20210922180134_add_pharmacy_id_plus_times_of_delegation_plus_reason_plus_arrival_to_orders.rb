@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddPharmacyIdPlusTimesOfDelegationPlusReasonPlusArrivalToOrders < ActiveRecord::Migration[6.1]
   def change
     add_column :orders, :pharmacy_id, :integer

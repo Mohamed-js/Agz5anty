@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppController < ApplicationController
   before_action :authenticate_user!
 
@@ -43,9 +45,10 @@ class AppController < ApplicationController
     )
 
     @cart_items.each do |cart_item|
-      if cart_item.item_type == 'medications'
+      case cart_item.item_type
+      when 'medications'
         item = Medication.find(cart_item.item_id)
-      elsif cart_item.item_type == 'cosmetics'
+      when 'cosmetics'
         item = CosmMed.find(cart_item.item_id)
       end
       ord = @order.order_items.build(item_id: item.id, item_type: cart_item.item_type,

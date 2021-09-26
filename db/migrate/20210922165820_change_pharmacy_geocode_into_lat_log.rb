@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangePharmacyGeocodeIntoLatLog < ActiveRecord::Migration[6.1]
   def change
     add_column :pharmacies, :latitude, :decimal

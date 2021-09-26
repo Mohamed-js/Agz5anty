@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CosmMedsController < ApplicationController
   before_action :set_cosm_med, only: %i[show edit update destroy]
   before_action :authenticate_admin!, except: [:show]

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CosmCatsController < ApplicationController
   before_action :set_cosm_cat, only: %i[edit update destroy]
   before_action :authenticate_admin!, except: [:show]
