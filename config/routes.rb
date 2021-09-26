@@ -37,13 +37,13 @@ Rails.application.routes.draw do
       resources :addresses, only: %i[index create destory]
       resources :pharmacy_sessions, only: %i[create]
 
-      # Specific to pharmacies
+      # Specific to pharmacies => get orders and classify them
       resources :pharmacy_pending_orders, only: %i[index]
       resources :pharmacy_finished_orders, only: %i[index create]
       resources :pharmacy_not_found_orders, only: %i[create]
       resources :pharmacy_fake_orders, only: %i[create]
 
-      # Specific to the owner
+      # Specific to the owner => monitor all pharmacies work
       resources :pending_orders, only: %i[index]
       resources :finished_orders, only: %i[index]
       resources :fake_orders, only: %i[index]
