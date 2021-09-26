@@ -17,9 +17,6 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
     payment_method = params[:payment_method] === 1 ? 'cod' : 'visa'
     payment_status = 'unpaid'
     cart_items = @user.cart_items
-    p '---------------USER------------------'
-    p @user
-    p '--------------------------------------'
     if cart_items.count > 0
       @order = Order.create(
         phone: @user.phone,
@@ -31,10 +28,7 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
         user_id: @user.id,
         pharmacy_id: Pharmacy.first.id # Default .. The center.
       )
-      p '---------------Order------------------'
-      p @order.valid?
-      p @order.errors.full_messages
-      p '--------------------------------------'
+
       cart_items.each do |cart_item|
         OrderItem.create(item_id: cart_item.item_id, user_id: cart_item.user_id,
                          item_type: cart_item.item_type, quantity: cart_item.quantity, order_id: @order.id)
@@ -45,9 +39,6 @@ class Api::V1::OrdersController < Api::V1::VersionOneController
       address = @order.address
       pharmacies_around = Pharmacy.in_government(address.government).near([address.latitude,
                                                                            address.longitude])
-      p '---------------Pharmacies------------------'
-      p pharmacies_around
-      p '--------------------------------------'
 
       if pharmacies_around
         pharmacies_around.each do |pharmacy|
