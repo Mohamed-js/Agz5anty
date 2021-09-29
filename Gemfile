@@ -22,6 +22,7 @@ gem 'shrine-cloudinary', '~> 1.1'
 gem 'simple_token_authentication', '~> 1.0'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
+gem 'csv'
 
 group :development, :test do
   gem 'dotenv-rails'

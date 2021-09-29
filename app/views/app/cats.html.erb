@@ -5,7 +5,7 @@
       <section class="center">
         <div class="service center flex-row">
           <%= link_to category_path(category.id), class:"flex-col center "  do %>
-            <%= image_tag category.image_url, class:"category-img rounded"  %>
+            <%= image_tag category.image_url, class:"category-img rounded" if category.image  %>
             <h3 class="center position-absolute category-name">
               <%= category.name.capitalize%>
             </h3>

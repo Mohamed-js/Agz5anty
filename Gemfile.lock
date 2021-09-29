@@ -97,6 +97,7 @@ GEM
     concurrent-ruby (1.1.8)
     content_disposition (1.0.0)
     crass (1.0.6)
+    csv (3.2.0)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -293,6 +294,7 @@ DEPENDENCIES
   bootstrap
   byebug
   capybara (>= 3.26)
+  csv
   devise
   dotenv-rails
   geocoder
