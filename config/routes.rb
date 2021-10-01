@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   get '/sales', to: 'orders#sellings'
   post '/sold/:id', to: 'orders#sell'
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :medications
+  resources :medications do
+    collection do
+      post :import
+    end
+  end
   resources :cart_items
   get '/cosm_cats/cat/:name', to: 'cosm_cats#cats'
 

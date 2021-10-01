@@ -2,6 +2,13 @@
 <br><br>
 <%= link_to 'New +', new_medication_path, class:"btn btn-success py-1 px-2 m-3" %>
 <br><br>
+
+<h4>Import bulk data</h4>
+<%= form_tag import_medications_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+<% end %>
+
 <table class="table table-striped m-2" style="font-size:15px;">
     <thead>
         <tr>
