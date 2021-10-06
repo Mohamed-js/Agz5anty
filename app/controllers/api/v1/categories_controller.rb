@@ -4,7 +4,7 @@ module Api
       before_action :set_category, only: %i[show]
       # GET Categories/
       def index
-        render json: Category.all
+        render json: Category.where.not(id: 16)
       end
 
       # GET Categories/1

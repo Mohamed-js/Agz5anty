@@ -2,7 +2,15 @@
 
 <br><br>
 <%= link_to 'اضافة جديد', new_cosm_med_path, class:"btn-success btn m-3" %>
-<br><br>
+<br>
+
+<h4>Import bulk data</h4>
+<%= form_tag import_cosm_meds_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+<% end %>
+
+<br>
 <table class="table table-striped m-2" style="font-size:15px;">
     <thead>
         <tr>

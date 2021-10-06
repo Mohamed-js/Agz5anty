@@ -9,6 +9,11 @@ class CosmMedsController < ApplicationController
     @cosm_meds = CosmMed.all
   end
 
+  def import
+    CosmMed.import(params[:file])
+    redirect_to root_url, notice: "Upload done!"
+  end
+
   # GET /cosm_meds/1 or /cosm_meds/1.json
   def show
     @cart = CartItem.new
@@ -29,6 +34,9 @@ class CosmMedsController < ApplicationController
   # POST /cosm_meds or /cosm_meds.json
   def create
     @cosm_med = CosmMed.new(cosm_med_params)
+    if @cosm_med.image_data
+      @cosm_med.img = JSON.parse(@cosm_med.image_data)['id']
+    end
 
     respond_to do |format|
       if @cosm_med.save

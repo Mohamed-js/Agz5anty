@@ -32,6 +32,9 @@ class MedicationsController < ApplicationController
   # POST /medications or /medications.json
   def create
     @medication = Medication.new(medication_params)
+    if @medication.image_data
+      @medication.img = JSON.parse(@medication.image_data)['id']
+    end
 
     respond_to do |format|
       if @medication.save
