@@ -12,6 +12,7 @@ class CosmMed < ApplicationRecord
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       @cosm = CosmMed.new row.to_hash
+      @cosm.availability = 'true'
 
       if @cosm.cosm_cat_id
         @cosm.save

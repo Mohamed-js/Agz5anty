@@ -37,6 +37,7 @@ class CosmMedsController < ApplicationController
     cat = CosmCat.find(@cosm_med.cosm_cat_id)
     @cosm_med.category = cat.name
     @cosm_med.sub_category = cat.parent
+    @cosm_med.availability = 'true'
     if @cosm_med.image_data
       @cosm_med.img = JSON.parse(@cosm_med.image_data)['id']
     end 
