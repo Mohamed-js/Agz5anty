@@ -7,10 +7,10 @@ class MedicationsController < ApplicationController
     @medications = Medication.all
     @i = 0
   end
-  
+
   def import
     Medication.import(params[:file])
-    redirect_to root_url, notice: "Upload done!"
+    redirect_to root_url, notice: 'Upload done!'
   end
 
   # GET /medications/1 or /medications/1.json
@@ -32,9 +32,7 @@ class MedicationsController < ApplicationController
   # POST /medications or /medications.json
   def create
     @medication = Medication.new(medication_params)
-    if @medication.image_data
-      @medication.img = JSON.parse(@medication.image_data)['id']
-    end
+    @medication.img = JSON.parse(@medication.image_data)['id'] if @medication.image_data
 
     respond_to do |format|
       if @medication.save

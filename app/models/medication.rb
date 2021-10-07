@@ -3,7 +3,7 @@ class Medication < ApplicationRecord
   include ImageUploader::Attachment(:image)
   belongs_to :category
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       @med = Medication.new row.to_hash

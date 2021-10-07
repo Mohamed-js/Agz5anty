@@ -13,9 +13,7 @@ class CosmMed < ApplicationRecord
     CSV.foreach(file.path, headers: true) do |row|
       @cosm = CosmMed.new row.to_hash
 
-      if @cosm.cosm_cat_id
-        @cosm.save
-      end
+      @cosm.save if @cosm.cosm_cat_id
     end
   end
 end

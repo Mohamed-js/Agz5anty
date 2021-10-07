@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       resources :order_items, only: %i[index]
       resources :orders, only: %i[index create]
       resources :text_orders, only: %i[create]
+      resources :img_orders, only: %i[create]
       resources :search, only: %i[index]
       resources :addresses, only: %i[index create destory]
       resources :pharmacy_sessions, only: %i[create]

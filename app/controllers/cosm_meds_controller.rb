@@ -11,7 +11,7 @@ class CosmMedsController < ApplicationController
 
   def import
     CosmMed.import(params[:file])
-    redirect_to root_url, notice: "Upload done!"
+    redirect_to root_url, notice: 'Upload done!'
   end
 
   # GET /cosm_meds/1 or /cosm_meds/1.json
@@ -37,9 +37,7 @@ class CosmMedsController < ApplicationController
     cat = CosmCat.find(@cosm_med.cosm_cat_id)
     @cosm_med.category = cat.name
     @cosm_med.sub_category = cat.parent
-    if @cosm_med.image_data
-      @cosm_med.img = JSON.parse(@cosm_med.image_data)['id']
-    end 
+    @cosm_med.img = JSON.parse(@cosm_med.image_data)['id'] if @cosm_med.image_data
 
     respond_to do |format|
       if @cosm_med.save

@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  include ImageUploader::Attachment(:image)
   belongs_to :user
   has_many :order_items
   belongs_to :address
