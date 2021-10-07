@@ -1,6 +1,8 @@
 module Api
   module V1
     class ImgOrdersController < Api::V1::VersionOneController
+      before_action :authenticated_user?
+
       def create
         payment_method = params[:payment_method] == 1 ? 'cod' : 'visa'
         payment_status = 'unpaid'
