@@ -2,14 +2,12 @@
     <br><br>
 
     <%= image_tag @medication.image_url, class:'show-img' if @medication.image %>
-
+    <%= image_tag @medication.img, class:'show-img' if !@medication.image && @medication.img%>
     <hr>
     <h6 class="flex-row">
         <strong> <%= @medication.name %> </strong>
     </h6>
     <p class="show-price">ج-م <%= @medication.price %></p>
-
-
 
     <div class="row w-100 text-left m-auto">
         <div class="col-4">

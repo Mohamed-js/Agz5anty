@@ -34,9 +34,12 @@ class CosmMedsController < ApplicationController
   # POST /cosm_meds or /cosm_meds.json
   def create
     @cosm_med = CosmMed.new(cosm_med_params)
+    cat = CosmCat.find(@cosm_med.cosm_cat_id)
+    @cosm_med.category = cat.name
+    @cosm_med.sub_category = cat.parent
     if @cosm_med.image_data
       @cosm_med.img = JSON.parse(@cosm_med.image_data)['id']
-    end
+    end 
 
     respond_to do |format|
       if @cosm_med.save

@@ -32,7 +32,14 @@
             <td><%= cosm_med.description %></td>
             <td><%= cosm_med.price %></td>
             <td><%= cosm_med.cosm_cat.name %></td>
-            <td><%= image_tag cosm_med.image_url, style:"height:50px;" if cosm_med.image %></td>
+
+            <% if cosm_med.image %>
+                <td><%= image_tag cosm_med.image_url, style:"height:50px;" %></td>
+            <% elsif cosm_med.img %>
+                <td><%= image_tag cosm_med.img, style:"height:50px;" %></td>
+            <% else %>
+                <td>-</td>
+            <% end %>
             <td><%= cosm_med.quantity %></td>
             <td><%= cosm_med.discount %></td>
             <td><%= link_to 'عرض', cosm_med, class:"btn btn-secondary" %></td>

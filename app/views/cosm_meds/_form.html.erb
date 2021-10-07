@@ -28,7 +28,7 @@
 <br>
 <div class="field form-gruop">
     <%= form.label "القسم" %>
-    <%= select_tag "cosm_med[#{:cosm_cat_id}]", options_from_collection_for_select(@cosm_cats, "id", "name", cosm_med.cosm_cat_id), class:"form-control" %>
+    <%= select_tag "cosm_med[cosm_cat_id]", options_from_collection_for_select(CosmCat.all, :id, :name, cosm_med.cosm_cat_id), class:"form-control" %>
 </div>
 <br>
 <div class="field form-gruop">
