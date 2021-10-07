@@ -19,6 +19,10 @@ module Api
           pharmacy_id: Pharmacy.first.id
         )
 
+        p '__________________________'
+        p @order.valid?
+        p @order.errors.full_messages
+        p '__________________________'
         if @order.save
           # HANDLE THE ADDRESS AND LOCATION
           address = @order.address
