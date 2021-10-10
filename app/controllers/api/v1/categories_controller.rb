@@ -4,12 +4,20 @@ module Api
       before_action :set_category, only: %i[show]
       # GET Categories/
       def index
-        render json: Category.where.not(id: 16)
+        if params[:lang] == 'ar'
+          render json: Category.all
+        else
+          render json: Category.all
+        end
       end
 
       # GET Categories/1
       def show
-        render json: @category.medications.order('name ASC').offset(params[:offset]).limit(12)
+        if params[:lang] == 'ar'
+          render json: @category.medications.order('name ASC').offset(params[:offset]).limit(12)
+        else
+          render json: @category.medications.order('name ASC').offset(params[:offset]).limit(12)
+        end
       end
 
       private

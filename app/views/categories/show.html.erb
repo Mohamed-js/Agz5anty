@@ -4,7 +4,7 @@
       <%= link_to medication_path(medication.id), class:"card-link m-auto" do %>
         <div class="card en">
           <div class="p-1 pb-0 product-img ">
-          <%= image_tag medication.image_url if medication.image %>  
+          <%= image_tag medication.img if medication.img %>  
           </div>
           <div class="product-info p-2 pt-0">
             <h6 class="card-title"><b><%= medication.name %></b></h6>

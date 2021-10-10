@@ -76,7 +76,7 @@ class MedicationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def medication_params
-    params.require(:medication).permit(:name, :description, :price, :ingredients, :shape, :dose, :quantity,
-                                       :availability, :category_id, :image)
+    params.require(:medication).permit(:name, :ar_name, :price, :generic_name, :shape, :ar_shape,
+                                       :availability, :category_id, :image, :category_name, :ar_category_name, :img, :company, :ar_company)
   end
 end

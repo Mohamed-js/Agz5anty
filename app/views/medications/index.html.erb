@@ -14,13 +14,9 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Description</th>
             <th>Price</th>
             <th>Category</th>
-            <th>Ingredients</th>
             <th>Shape</th>
-            <th>Dose</th>
-            <th>Quantity</th>
             <th>Img</th>
             <th>Availability</th>
             <th colspan="3"></th>
@@ -32,15 +28,10 @@
         <tr>
             <td class="table-center"><%= @i+=1 %></td>
             <td><%= medication.name %></td>
-            <td><%= medication.description %></td>
             <td><%= medication.price %></td>
-            <td><%= medication.category.name %></td>
-            <td><%= medication.ingredients %></td>
+            <td><%= medication.category_name %></td>
             <td><%= medication.shape %></td>
-            <td><%= medication.dose %></td>
-            <td><%= medication.quantity %></td>
-            <td><%= image_tag medication.image_url, style:"height:50px;" if medication.image %></td>
-
+            <td><%= image_tag medication.img, style:"height:50px;" if medication.img %></td>
 
             <td><%= medication.availability %></td>
             <td><%= link_to 'Show', medication, class:"btn btn-success py-1 px-1" %></td>

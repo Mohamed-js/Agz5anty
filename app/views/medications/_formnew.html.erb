@@ -16,17 +16,20 @@
     <%= form.label :name %>
     <%= form.text_field :name, class:"form-control" %>
   </div>
+
+<br>
+  <div class="field">
+    <%= form.label :ar_name %>
+    <%= form.text_field :ar_name, class:"form-control" %>
+  </div>
+
 <br>
   <div class="field form-gruop">
     <%= form.label "Category" %>
     
     <%= select_tag "medication[#{:category_id}]", options_from_collection_for_select(@categories, "id", "name"), class:"form-control" %>
   </div>
-<br>
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, class:"form-control" %>
-  </div>
+
 <br>
   <div class="field">
     <%= form.label :price %>
@@ -34,23 +37,29 @@
   </div>
 <br>
   <div class="field">
-    <%= form.label :ingredients %>
-    <%= form.text_field :ingredients, class:"form-control" %>
+    <%= form.label :generic_name %>
+    <%= form.text_field :generic_name, class:"form-control" %>
   </div>
 <br>
   <div class="field">
     <%= form.label :shape %>
     <%= select_tag "medication[#{:shape}]", options_for_select(["tablet","syrup","capsule","powder"]), class:"form-control" %>
   </div>
-<br>
+
+  <br>
   <div class="field">
-    <%= form.label :dose %>
-    <%= form.text_field :dose, class:"form-control" %>
+    <%= form.label :ar_shape %>
+    <%= select_tag "medication[#{:ar_shape}]", options_for_select(["حبوب","شراب","كبسول","بودرة"]), class:"form-control" %>
   </div>
 <br>
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, class:"form-control" %>
+    <%= form.label :company %>
+    <%= form.text_field :company, class:"form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :ar_company %>
+    <%= form.text_field :ar_company, class:"form-control" %>
   </div>
 <br>
   <div class="field">
