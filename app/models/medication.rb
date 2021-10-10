@@ -6,12 +6,7 @@ class Medication < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      @med = Medication.new row.to_hash
-      # if @med.image_data
-      #   @med.img = JSON.parse(@med.image_data)['id']
-      # end
-      @med.category_id = 16 if !@med.category_id || @med.category_id == '-'
-      @med.save
+      Medication.create! row.to_hash
     end
   end
 end

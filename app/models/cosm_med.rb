@@ -3,7 +3,6 @@ class CosmMed < ApplicationRecord
   belongs_to :cosm_cat, class_name: 'CosmCat', foreign_key: 'cosm_cat_id'
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  validates :description, presence: true
   validates :category, presence: true
   validates :sub_category, presence: true
   validates :price, presence: true
@@ -11,9 +10,7 @@ class CosmMed < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      @cosm = CosmMed.new row.to_hash
-
-      @cosm.save if @cosm.cosm_cat_id
+      CosmMed.create! row.to_hash
     end
   end
 end
