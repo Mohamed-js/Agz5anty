@@ -36,7 +36,7 @@
             <% if cosm_med.image %>
                 <td><%= image_tag cosm_med.image_url, style:"height:50px;" %></td>
             <% elsif cosm_med.img %>
-                <td><%= image_tag cosm_med.img, style:"height:50px;" %></td>
+                <td><img src="<%= cosm_med.img %>" style='height: 50px' /></td>
             <% else %>
                 <td>-</td>
             <% end %>
