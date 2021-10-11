@@ -4,7 +4,7 @@ module Api
       protect_from_forgery with: :null_session
 
       def create
-        user = User.new(email: params[:email], password: params[:password])
+        user = User.new(email: params[:email].downcase.strip, password: params[:password])
         user.phone = params[:phone]
 
         if user.save
