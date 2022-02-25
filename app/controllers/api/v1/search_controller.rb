@@ -10,7 +10,7 @@ module Api
           @cosms = CosmMed.where("lower(name) ILIKE '%#{@keyword}%'").or(CosmMed.where("lower(description) ILIKE '%#{@keyword}%'"))
           @results = @meds + @cosms
         end
-        render json: @results.limit(20)
+        render json: @results[0..20]
       end
     end
   end
